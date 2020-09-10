@@ -26,7 +26,7 @@ const CommandMenuInterface: FunctionComponent<CommandMenuInterfaceProps> = ({
       };
       return (
         <Fragment key={index.toString()}>
-          <span className={`${className}__list-title`}>{title}</span>
+          <span className={`${className}__label`}>{title}</span>
           <button
             className={`${className}__command`}
             onClick={(): void => {

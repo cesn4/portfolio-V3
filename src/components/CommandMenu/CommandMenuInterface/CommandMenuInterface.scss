@@ -1,23 +1,43 @@
 .command-menu-interface {
-    position: fixed;
-    height: 100vh;
-    top: 0;
-    right: -100%;
-    width: 20vw;
-    background-color: $color-cinnabar;
-    z-index: 500;
-    transition: cta-transition([right], 0.5s);
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  top: 0;
+  right: -100%;
+  width: 20vw;
+  background-color: $color-black;
+  padding: 0 2%;
+  z-index: 500;
+  transition: cta-transition([right], 0.5s);
 
-    &.-active {
-        right: 0;
-    }
+  &.-active {
+    right: 0;
+  }
 
-    &__content {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        width: 100%;
-        align-items: center;
-        justify-content: center;
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__label {
+    font-family: $font-family-primary;
+    font-size: font-size(medium);
+    color: $color-dark-gray;
+    padding-bottom: 10px;
+  }
+
+  &__command {
+    font-family: $font-family-primary;
+    font-size: font-size(medium);
+    color: $color-white;
+    margin-bottom: 10px;
+    text-align: start;
+    transition: cta-transition(background-color, 0.1s);
+
+    &:hover {
+      background-color: $color-dark-gray;
     }
+  }
 }
