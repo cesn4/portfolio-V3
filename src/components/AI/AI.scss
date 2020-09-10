@@ -13,18 +13,9 @@
     }
 
     @include if-desktop {
-        padding: 0 300px;
+        padding: 3% 300px;
     }
-
-    &__experiances {
-        font-size: 20px;
-
-        @include if-tablet {
-            font-size: 30px;
-        }
-
-        @include if-desktop {
-            font-size: 45px;
-        }
+    @include if-desktop-xl {
+        padding: 7% 25%;
     }
 }
