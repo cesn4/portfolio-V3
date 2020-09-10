@@ -1,0 +1,27 @@
+.ai-terminal {
+    display: flex;
+    justify-content: center;
+    &__box {
+        background-color: theme-color(dark) !important;
+        max-height: 200px !important;
+        min-height: 200px !important;
+        min-width: 100% !important;
+
+        @include if-tablet {
+            min-width: 80% !important;
+        }
+
+        @include if-desktop {
+            max-width: 50% !important;
+            min-width: 50% !important;
+        }
+    }
+
+    &__box-content {
+        background-color: theme-color(dark) !important;
+    }
+
+    &__input {
+        background-color: theme-color(dark) !important;
+    }
+}

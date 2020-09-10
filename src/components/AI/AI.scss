@@ -1,0 +1,30 @@
+.ai {
+    align-items: center;
+    color: theme-color(active);
+    display: flex;
+    font-family: $font-family-primary;
+    font-size: font-size(medium);
+    justify-content: center;
+    text-align: center;
+
+    @include if-tablet {
+        font-size: 40px;
+        padding: 0 50px;
+    }
+
+    @include if-desktop {
+        padding: 0 300px;
+    }
+
+    &__experiances {
+        font-size: 20px;
+
+        @include if-tablet {
+            font-size: 30px;
+        }
+
+        @include if-desktop {
+            font-size: 45px;
+        }
+    }
+}

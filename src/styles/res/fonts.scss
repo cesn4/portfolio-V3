@@ -1,13 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Scope+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
 
-$font-family-primary: 'Scope One', serif;
+$font-family-primary: 'Staatliches', cursive;
+$font-family-secondary: 'SimSun-ExtB';
 
 @function px-to-rem($_size) {
     $rem-size: $_size / 16px;
     @return #{$rem-size}rem;
 }
 
-$font-size-small: px-to-rem(15px);
-$font-size-medium: px-to-rem(20px);
-$font-size-large: px-to-rem(30px);
-$font-size-extra: px-to-rem(70px);
+$font-size-map: (
+    small: px-to-rem(20px),
+    medium: px-to-rem(30px),
+    large: px-to-rem(50px),
+);
+
+@function font-size($_key) {
+    @return map-get($font-size-map, $_key);
+}

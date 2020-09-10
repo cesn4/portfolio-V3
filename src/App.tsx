@@ -1,15 +1,13 @@
-import React, { FunctionComponent } from 'react';
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import LogIn from './views';
+import React, { FunctionComponent, Fragment } from 'react';
 
+import Main from './views/Main';
+import '~/config/layout';
 
 const App: FunctionComponent = () => {
     return (
-      <BrowserRouter>
-        <Switch>
-          <Route exact path='/' component={LogIn}/>
-        </Switch>
-      </BrowserRouter>
+        <Fragment>
+            <Main />
+        </Fragment>
     );
 };
 
