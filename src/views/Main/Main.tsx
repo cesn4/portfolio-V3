@@ -13,6 +13,7 @@ const Main: FunctionComponent<ProjectWindowState> = ({
     projectWindowState,
   }: ProjectWindowState) => {
   const className = "main";
+
   return (
     <div className={`${className}`}>
         {projectWindowState && <ProjectWindow />}
