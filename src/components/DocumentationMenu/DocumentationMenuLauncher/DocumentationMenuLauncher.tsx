@@ -6,6 +6,7 @@ import "./DocumentationMenuLauncher.scss";
 const DocumentationMenuLauncher: FunctionComponent<DocumentationMenuLauncherProps> = ({
   openHandler,
   menuState,
+  projectState,
 }: DocumentationMenuLauncherProps) => {
   const className = "documentation-menu-launcher";
   return (
@@ -15,7 +16,9 @@ const DocumentationMenuLauncher: FunctionComponent<DocumentationMenuLauncherProp
       })}
       onMouseEnter={openHandler}
     >
-      <span className={`${className}__text`}>Documentation</span>
+      <span className={`${className}__text`}>
+        {projectState ? 'Projects' : 'Documentation'}
+      </span>
     </div>
   );
 };
@@ -23,6 +26,7 @@ const DocumentationMenuLauncher: FunctionComponent<DocumentationMenuLauncherProp
 interface DocumentationMenuLauncherProps {
   openHandler: VoidFunction;
   menuState: boolean;
+  projectState: boolean;
 }
 
 export default DocumentationMenuLauncher;

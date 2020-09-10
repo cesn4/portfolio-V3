@@ -2,7 +2,7 @@ import { ApplicationState } from './types/applicationState';
 import { Actions } from './types/actionTypes';
 
 const initialState: ApplicationState = {
-    aiCommand: '',
+    aiCommand: "Good morning",
     aiState: true,
     projectWindowState: false,
 };

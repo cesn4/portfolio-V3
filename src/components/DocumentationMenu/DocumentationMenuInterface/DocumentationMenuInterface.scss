@@ -2,23 +2,29 @@
   position: fixed;
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: 100vh;
-  top: 0;
+  height: fit-content;
+  top: 50%;
   right: -100%;
   width: 20vw;
   background-color: $color-black;
-  padding: 0 2%;
+  padding: 2%;
   z-index: $z-index-sky;
   transition: cta-transition([right], 0.5s);
+  transform: translateY(-50%);
 
   &.-active {
     right: 0;
   }
 
+  &.-project {
+    width: fit-content;
+
+  }
+
   &__content {
     display: flex;
     flex-direction: column;
+    width: 100%;
   }
 
   &__text {
@@ -33,5 +39,26 @@
     color: orange;
     margin: 20px 0;
     text-align: start;
+  }
+
+  &__title {
+    font-family: $font-family-primary;
+    font-size: font-size(medium);
+    color: $color-dark-gray;
+    padding-bottom: 10px;
+  }
+
+  &__name {
+    font-family: $font-family-primary;
+    font-size: font-size(medium);
+    color: $color-white;
+    margin-bottom: 10px;
+    text-align: start;
+    transition: cta-transition(background-color, 0.1s);
+
+    &:hover {
+      background-color: $color-dark-gray;
+      cursor: pointer;
+    }
   }
 }

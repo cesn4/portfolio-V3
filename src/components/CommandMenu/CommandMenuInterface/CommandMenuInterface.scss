@@ -3,12 +3,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 100%;
   top: 0;
   left: -100%;
   width: 20vw;
   background-color: $color-black;
-  padding: 0 2%;
+  padding: 2%;
   z-index: $z-index-sky;
   transition: cta-transition([left], 0.5s);
 

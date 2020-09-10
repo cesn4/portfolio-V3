@@ -3,8 +3,10 @@ import React, { FunctionComponent, Fragment, useState } from "react";
 import DocumentationMenuLauncher from "./DocumentationMenuLauncher";
 import DocumentationMenuInterface from "./DocumentationMenuInterface";
 
-const DocumentationMenu: FunctionComponent = ({ children }) => {
+const DocumentationMenu: FunctionComponent = () => {
   const [menuState, setMenuState] = useState(false);
+
+  const projectState = true;
 
   const menuOpenHandler: VoidFunction = () => {
     setMenuState(true);
@@ -16,8 +18,8 @@ const DocumentationMenu: FunctionComponent = ({ children }) => {
 
   return (
     <Fragment>
-      <DocumentationMenuLauncher openHandler={menuOpenHandler} menuState={menuState}/>
-      <DocumentationMenuInterface menuState={menuState} closeHandler={menuCloseHandler}/>
+      <DocumentationMenuLauncher projectState={projectState} openHandler={menuOpenHandler} menuState={menuState}/>
+      <DocumentationMenuInterface projectState={projectState} menuState={menuState} closeHandler={menuCloseHandler}/>
     </Fragment>
   );
 };
