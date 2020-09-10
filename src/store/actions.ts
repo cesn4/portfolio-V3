@@ -1,11 +1,15 @@
 import { store } from '~/store';
 
-import { AiCommandTypes, AiStateType } from './types/commandTypes';
+import { AiCommandTypes } from './types/commandTypes';
 
 export const SetAiCommand = (payload: AiCommandTypes): void => {
     store.dispatch({ type: 'SetAiCommand', payload: payload });
 };
 
-export const SetAiState = (payload: AiStateType): void => {
+export const SetAiState = (payload: boolean): void => {
     store.dispatch({ type: 'SetAiState', payload: payload });
+};
+
+export const SetProjectWindow = (payload: boolean): void => {
+    store.dispatch({ type: 'SetProjectWindow', payload: payload });
 };

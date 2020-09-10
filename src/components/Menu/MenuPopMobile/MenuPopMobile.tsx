@@ -1,6 +1,5 @@
 import React, { FunctionComponent, ReactChild, Fragment } from "react";
 import classNames from "classnames";
-import Draggable from "react-draggable";
 import { connect } from "react-redux";
 
 import { SetAiCommand } from "~/store/actions";
@@ -8,9 +7,9 @@ import { AiCommandTypes } from "~/store/types/commandTypes";
 import { ApplicationState } from "~/store/types/applicationState";
 import Icon from "~/components/Icons";
 
-import "./MenuPop.scss";
+import "./MenuPopMobile.scss";
 
-const MenuPop: FunctionComponent<MenuPopProps> = ({
+const MenuPopMobile: FunctionComponent<MenuPopMobileProps> = ({
   label,
   text,
   visible = false,
@@ -19,15 +18,12 @@ const MenuPop: FunctionComponent<MenuPopProps> = ({
   commands,
   text2,
   onClick,
-}: MenuPopProps) => {
-  const className = "menu-pop";
-
-  const defaultPositionText = { x: 318, y: 31 };
-  const defaultPositionList = { x: 661, y: 56 };
+  mobileClose,
+}: MenuPopMobileProps) => {
+  const className = "menu-pop-mobile";
 
   if (menuListContent === undefined) {
     return (
-      <Draggable defaultPosition={defaultPositionText}>
         <div
           className={classNames(`${className}`, {
             "-visible": visible,
@@ -47,7 +43,6 @@ const MenuPop: FunctionComponent<MenuPopProps> = ({
             </div>
           </div>
         </div>
-      </Draggable>
     );
   }
   const renderMenuList: Array<ReactChild> = menuListContent.map(
@@ -64,18 +59,18 @@ const MenuPop: FunctionComponent<MenuPopProps> = ({
           <span className={`${className}__list-title`}>{title}</span>
           <button
             className={`${className}__command`}
-            onClick={(): void => {
-              clickHandler(command);
-            }}
+            onClick={(): void => {clickHandler(command);
+              mobileClose();
+              }}
           >
             {command}
           </button>
           {!!command2 && (
             <button
               className={`${className}__command`}
-              onClick={(): void => {
-                clickHandler(command2);
-              }}
+              onClick={(): void => {clickHandler(command2);
+                mobileClose();
+                }}
             >
               {command2}
             </button>
@@ -83,8 +78,8 @@ const MenuPop: FunctionComponent<MenuPopProps> = ({
           {!!command3 && (
             <button
               className={`${className}__command`}
-              onClick={(): void => {
-                clickHandler(command3);
+              onClick={(): void => {clickHandler(command3);
+              mobileClose();
               }}
             >
               {command3}
@@ -95,7 +90,6 @@ const MenuPop: FunctionComponent<MenuPopProps> = ({
     }
   );
   return (
-    <Draggable defaultPosition={defaultPositionList}>
       <div
         className={classNames(`${className}`, {
           "-visible": visible,
@@ -112,11 +106,10 @@ const MenuPop: FunctionComponent<MenuPopProps> = ({
           <div className={`${className}__list-box`}>{renderMenuList}</div>
         </div>
       </div>
-    </Draggable>
   );
 };
 
-interface MenuPopProps {
+interface MenuPopMobileProps {
   visible?: boolean;
   label: string;
   text?: string | boolean;
@@ -125,6 +118,7 @@ interface MenuPopProps {
   commands?: string;
   text2?: string;
   onClick: VoidFunction;
+  mobileClose: VoidFunction;
 }
 
 export interface MenuListContent {
@@ -144,4 +138,4 @@ interface AiStateProp {
   aiState: boolean;
 }
 
-export default connect(mapStateToProps)(MenuPop);
+export default connect(mapStateToProps)(MenuPopMobile);
