@@ -1,4 +1,4 @@
-import { AiCommandTypes, AiStateType } from './commandTypes';
+import { AiCommandTypes } from './commandTypes';
 
 export interface SetAiCommand {
     type: 'SetAiCommand';
@@ -7,7 +7,11 @@ export interface SetAiCommand {
 
 export interface SetAiType {
     type: 'SetAiState';
-    payload: AiStateType;
+    payload: boolean;
+}
+export interface SetProjectWindow {
+    type: 'SetProjectWindow';
+    payload: boolean;
 }
 
-export type Actions = SetAiCommand | SetAiType;
+export type Actions = SetAiCommand | SetAiType | SetProjectWindow;

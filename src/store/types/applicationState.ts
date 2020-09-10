@@ -1,6 +1,7 @@
-import { AiCommandTypes, AiStateType } from './commandTypes';
+import { AiCommandTypes } from './commandTypes';
 
 export interface ApplicationState {
     aiCommand: AiCommandTypes;
-    aiState: AiStateType;
+    aiState: boolean;
+    projectWindowState: boolean;
 }

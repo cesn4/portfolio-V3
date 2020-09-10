@@ -3,7 +3,8 @@ import { Actions } from './types/actionTypes';
 
 const initialState: ApplicationState = {
     aiCommand: '',
-    aiState: false,
+    aiState: true,
+    projectWindowState: false,
 };
 const reducer = (state = initialState, action: Actions): ApplicationState => {
     switch (action.type) {
@@ -17,6 +18,12 @@ const reducer = (state = initialState, action: Actions): ApplicationState => {
             return {
                 ...state,
                 aiState: action.payload,
+            };
+        }
+        case 'SetProjectWindow': {
+            return {
+                ...state,
+                projectWindowState: action.payload,
             };
         }
         default: {
