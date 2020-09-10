@@ -10,6 +10,7 @@ import "./Main.scss";
 import StatusBar from "~/components/StatusBar";
 import CommandMenu from "~/components/CommandMenu";
 import DocumentationMenu from "~/components/DocumentationMenu";
+import ProjectMenu from "~/components/ProjectMenu";
 
 const Main: FunctionComponent<ProjectWindowState> = ({
     projectWindowState,
@@ -23,6 +24,7 @@ const Main: FunctionComponent<ProjectWindowState> = ({
         <div className={`${className}__box`}>
           <CommandMenu />
           <DocumentationMenu />
+          <ProjectMenu />
           <Row>
             <Col>
               <div className={`${className}__status`}>
