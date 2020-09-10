@@ -9,7 +9,7 @@
   width: 20vw;
   background-color: $color-black;
   padding: 0 2%;
-  z-index: 500;
+  z-index: $z-index-sky;
   transition: cta-transition([left], 0.5s);
 
   &.-active {
