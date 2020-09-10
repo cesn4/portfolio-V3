@@ -1,1 +1,1 @@
-export { default, MenuListContent } from './MenuPop';
+export { default } from './MenuPop';

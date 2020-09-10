@@ -1,7 +1,8 @@
 import React, { FunctionComponent, useState, Fragment } from 'react';
 
 import MenuLauncher from './MenuLauncher';
-import MenuPop, { MenuListContent } from './MenuPop';
+import MenuPop from './MenuPop';
+import { MenuListContent } from './MenuPop/MenuPop';
 
 const Menu: FunctionComponent<MenuProps> = ({
     label,

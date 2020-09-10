@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 
 import Menu from '../Menu';
-import { MenuListContent } from '~/components/Menu/MenuPop';
+import { MenuListContent } from '~/components/Menu/MenuPop/MenuPop';
 
 import './InformationBar.scss';
 

@@ -1,5 +1,5 @@
 import { ApplicationState } from './types/applicationState';
-import { Actions } from './types/ActionTypes';
+import { Actions } from './types/actionTypes';
 
 const initialState: ApplicationState = {
     aiCommand: '',
