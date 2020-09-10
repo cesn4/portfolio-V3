@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 $font-family-primary: 'VT323', monospace;
-$font-family-secondary: 'SimSun-ExtB';
+$font-family-secondary: 'Press Start 2P', cursive;
 
 @function px-to-rem($_size) {
     $rem-size: $_size / 16px;

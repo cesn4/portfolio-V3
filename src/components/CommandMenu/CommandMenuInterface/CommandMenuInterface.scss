@@ -1,0 +1,13 @@
+.command-menu-interface {
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    right: -100%;
+    width: 20vw;
+    background-color: $color-cinnabar;
+    z-index: 500;
+
+    &.-active {
+        right: 0;
+    }
+}
