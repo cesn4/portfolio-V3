@@ -1,20 +1,20 @@
-.menu-pop {
+.menu-pop-mobile {
   background-color: theme-color(dark);
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: fixed;
+  top: 50%;
+  left: 50%;
   visibility: hidden;
   z-index: 60;
-  width: 300px;
-  height: 550px;
+  width: 80vw;
+  height: fit-content;
   border: solid 1px $color-dark-gray;
+  padding-bottom: 40px;
+  transform: translateX(-50%) translateY(-50%);
 
-  &:hover {
-    cursor: grab;
-  }
-
-  &:active {
-    cursor: grabbing;
+  @include if-tablet {
+    width: 300px;
+    height: 550px;
+    padding-bottom: 0;
   }
 
   &.-visible {
@@ -90,7 +90,6 @@
     font-size: font-size(small);
     text-align: left;
     text-decoration: none;
-
     &:hover {
       background-color: darken(theme-color(inactive), 30%);
       cursor: pointer;

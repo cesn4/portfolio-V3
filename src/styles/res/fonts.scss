@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
-$font-family-primary: 'Staatliches', cursive;
+$font-family-primary: 'VT323', monospace;
 $font-family-secondary: 'SimSun-ExtB';
 
 @function px-to-rem($_size) {
@@ -9,11 +10,14 @@ $font-family-secondary: 'SimSun-ExtB';
 }
 
 $font-size-map: (
-    small: px-to-rem(20px),
-    medium: px-to-rem(30px),
+    mini: px-to-rem(20px),
+    small: px-to-rem(27px),
+    medium: px-to-rem(35px),
     large: px-to-rem(50px),
 );
 
 @function font-size($_key) {
     @return map-get($font-size-map, $_key);
 }
+
+

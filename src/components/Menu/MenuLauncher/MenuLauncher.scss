@@ -1,13 +1,17 @@
 .menu-launcher {
-    background-color: transparent;
-    border: none;
-    color: theme-color(active);
-    display: flex;
-    font-family: $font-family-primary;
-    font-size: font-size(medium);
-    text-decoration: none;
+  background-color: transparent;
+  border: none;
+  color: theme-color(active);
+  display: flex;
+  font-family: $font-family-primary;
+  font-size: font-size(medium);
+  text-decoration: none;
 
-    &.-active {
-        color: theme-color(inactive);
-    }
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.-active {
+    color: theme-color(inactive);
+  }
 }
