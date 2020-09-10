@@ -1,19 +1,19 @@
-.command-menu-interface {
+.documentation-menu-interface {
   position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
   top: 0;
-  left: -100%;
+  right: -100%;
   width: 20vw;
   background-color: $color-black;
   padding: 0 2%;
   z-index: 500;
-  transition: cta-transition([left], 0.5s);
+  transition: cta-transition([right], 0.5s);
 
   &.-active {
-    left: 0;
+    right: 0;
   }
 
   &__content {
@@ -21,24 +21,17 @@
     flex-direction: column;
   }
 
-  &__label {
+  &__text {
     font-family: $font-family-primary;
     font-size: font-size(medium);
-    color: $color-dark-gray;
-    padding-bottom: 10px;
+    color: $color-white;
   }
 
   &__command {
     font-family: $font-family-primary;
     font-size: font-size(medium);
-    color: $color-white;
-    margin-bottom: 10px;
+    color: orange;
+    margin: 20px 0;
     text-align: start;
-    transition: cta-transition(background-color, 0.1s);
-
-    &:hover {
-      background-color: $color-dark-gray;
-      cursor: pointer;
-    }
   }
 }

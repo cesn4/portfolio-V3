@@ -1,11 +1,11 @@
-.command-menu-launcher {
+.documentation-menu-launcher {
   $_parent: &;
   position: fixed;
   display: flex;
   height: 100%;
   align-items: center;
   top: 0;
-  left: 0;
+  right: 0;
   z-index: 600;
   padding: 10px;
 
