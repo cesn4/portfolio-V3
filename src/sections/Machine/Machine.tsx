@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 
 import AI, { AIProps } from '~/components/AI/AI';
 import { ApplicationState } from '~/store/types/applicationState';
-import AiTerminal from '~/components/AiTerminal';
 
 import './Machine.scss';
 
@@ -12,7 +11,6 @@ const Machine: FunctionComponent<AIProps> = ({ command }: AIProps) => {
     return (
         <div className={className}>
             <AI command={command} />
-            <AiTerminal />
         </div>
     );
 };

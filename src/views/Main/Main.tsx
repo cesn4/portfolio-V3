@@ -2,26 +2,31 @@ import React, { FunctionComponent } from "react";
 import { Container, Row, Col } from "react-grid-system";
 import { connect } from "react-redux";
 
-import Navigation from "~/sections/Navigation";
 import Machine from "~/sections/Machine";
 import { ApplicationState } from "~/store/types/applicationState";
-import ProjectWindow from "~/components/ProjectWindow";
+// import ProjectWindow from "~/components/ProjectWindow";
 
 import "./Main.scss";
+import StatusBar from "~/components/StatusBar";
+import CommandMenu from "~/components/CommandMenu";
+import DocumentationMenu from "~/components/DocumentationMenu";
 
 const Main: FunctionComponent<ProjectWindowState> = ({
     projectWindowState,
   }: ProjectWindowState) => {
   const className = "main";
+
   return (
     <div className={`${className}`}>
-        {projectWindowState && <ProjectWindow />}
+        {/* {projectWindowState && <ProjectWindow />} */}
       <Container>
         <div className={`${className}__box`}>
+          <CommandMenu />
+          <DocumentationMenu />
           <Row>
             <Col>
-              <div className={`${className}__navigation`}>
-                <Navigation />
+              <div className={`${className}__status`}>
+                <StatusBar />
               </div>
             </Col>
           </Row>

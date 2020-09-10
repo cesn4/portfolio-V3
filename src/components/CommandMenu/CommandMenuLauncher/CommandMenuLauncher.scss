@@ -1,0 +1,30 @@
+.command-menu-launcher {
+  $_parent: &;
+  position: fixed;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  top: 0;
+  left: 0;
+  z-index: 600;
+  padding: 10px;
+
+  &.-active {
+    #{$_parent}__text {
+      color: $color-white;
+      opacity: 0;
+    }
+  }
+
+  &__text {
+    opacity: 1;
+    color: $color-dark-gray;
+    font-family: $font-family-secondary;
+    font-size: font-size(medium);
+    text-transform: uppercase;
+    writing-mode: vertical-rl;
+    text-orientation: sideways-right;
+    transition: cta-transition(opacity, 0.5s);
+    cursor: default;
+  }
+}

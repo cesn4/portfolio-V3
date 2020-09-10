@@ -1,0 +1,37 @@
+.documentation-menu-interface {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  top: 0;
+  right: -100%;
+  width: 20vw;
+  background-color: $color-black;
+  padding: 0 2%;
+  z-index: 500;
+  transition: cta-transition([right], 0.5s);
+
+  &.-active {
+    right: 0;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__text {
+    font-family: $font-family-primary;
+    font-size: font-size(medium);
+    color: $color-white;
+  }
+
+  &__command {
+    font-family: $font-family-primary;
+    font-size: font-size(medium);
+    color: orange;
+    margin: 20px 0;
+    text-align: start;
+  }
+}

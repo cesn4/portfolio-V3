@@ -1,9 +1,0 @@
-.information-bar {
-    align-items: flex-end;
-    display: flex;
-    flex-direction: column;
-
-    @include if-desktop {
-        align-items: flex-start;
-    }
-}
