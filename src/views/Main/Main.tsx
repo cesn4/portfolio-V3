@@ -11,6 +11,9 @@ import StatusBar from "~/components/StatusBar";
 import CommandMenu from "~/components/CommandMenu";
 import DocumentationMenu from "~/components/DocumentationMenu";
 import ProjectMenu from "~/components/ProjectMenu";
+import ProjectInfo from "~/components/ProjectInfo";
+
+import { Projects, boardScore } from '~/mocks/projects';
 
 const Main: FunctionComponent<ProjectWindowState> = ({
     projectWindowState,
@@ -19,12 +22,11 @@ const Main: FunctionComponent<ProjectWindowState> = ({
 
   return (
     <div className={`${className}`}>
-        {/* {projectWindowState && <ProjectWindow />} */}
       <Container>
         <div className={`${className}__box`}>
           <CommandMenu />
           <DocumentationMenu />
-          <ProjectMenu />
+          {projectWindowState && <ProjectMenu />}
           <Row>
             <Col>
               <div className={`${className}__status`}>
@@ -32,13 +34,14 @@ const Main: FunctionComponent<ProjectWindowState> = ({
               </div>
             </Col>
           </Row>
-          <Row>
+          {/* <Row>
             <Col>
               <div className={`${className}__machine`}>
                 <Machine />
               </div>
             </Col>
-          </Row>
+          </Row> */}
+          <ProjectInfo project={boardScore}/>
         </div>
       </Container>
     </div>
