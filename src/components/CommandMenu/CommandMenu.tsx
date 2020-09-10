@@ -8,17 +8,15 @@ const CommandMenu: FunctionComponent = ({ children }) => {
 
   const menuOpenHandler: VoidFunction = () => {
     setMenuState(true);
-    console.log("Open");
   };
 
   const menuCloseHandler: VoidFunction = () => {
     setMenuState(false);
-    console.log("close");
   };
 
   return (
     <Fragment>
-      <CommandMenuLauncher openHandler={menuOpenHandler} />
+      <CommandMenuLauncher openHandler={menuOpenHandler} menuState={menuState}/>
       <CommandMenuInterface menuState={menuState} closeHandler={menuCloseHandler}/>
     </Fragment>
   );

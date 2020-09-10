@@ -6,8 +6,18 @@
     width: 20vw;
     background-color: $color-cinnabar;
     z-index: 500;
+    transition: cta-transition([right], 0.5s);
 
     &.-active {
         right: 0;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
     }
 }
