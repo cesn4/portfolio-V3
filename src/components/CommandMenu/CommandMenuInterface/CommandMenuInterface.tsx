@@ -20,8 +20,10 @@ const CommandMenuInterface: FunctionComponent<CommandMenuInterfaceProps> = ({
       const clickHandler: void | Function = (arg: AiCommandTypes) => {
         if (aiState) {
           SetAiCommand(arg);
+          closeHandler();
         } else {
           alert("AI must be turned on before passing commands.");
+          closeHandler();
         }
       };
       return (
