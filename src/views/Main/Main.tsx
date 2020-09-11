@@ -9,7 +9,6 @@ import MainLayout from "~/layouts";
 
 import "./Main.scss";
 
-
 const Main: FunctionComponent<ProjectWindowState> = ({
   projectWindowState,
   activeProject,
@@ -19,8 +18,8 @@ const Main: FunctionComponent<ProjectWindowState> = ({
   return (
     <div className={`${className}`}>
       <MainLayout>
-        {/* <Machine /> */}
-        <ProjectInfo project={projects[activeProject]} />
+        <Machine isActive={!projectWindowState} />
+        <ProjectInfo isActive={projectWindowState} project={projects[activeProject]} />
       </MainLayout>
     </div>
   );

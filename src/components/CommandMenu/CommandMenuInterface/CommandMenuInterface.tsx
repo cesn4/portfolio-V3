@@ -1,12 +1,13 @@
 import React, { FunctionComponent, Fragment, ReactChild } from "react";
 import classNames from "classnames";
 
-import "./CommandMenuInterface.scss";
-import { SetAiCommand } from "~/store/actions";
+import { SetAiCommand, SetProjectWindow } from "~/store/actions";
 import { AiCommandTypes } from "~/store/types/commandTypes";
 import { useSelector } from "react-redux";
 import { ApplicationState } from "~/store/types/applicationState";
 import { CommandListContent, commandList } from "~/mocks/commands";
+
+import "./CommandMenuInterface.scss";
 
 const CommandMenuInterface: FunctionComponent<CommandMenuInterfaceProps> = ({
   menuState,
@@ -20,10 +21,12 @@ const CommandMenuInterface: FunctionComponent<CommandMenuInterfaceProps> = ({
       const clickHandler: void | Function = (arg: AiCommandTypes) => {
         if (aiState) {
           SetAiCommand(arg);
+          SetProjectWindow(false);
           closeHandler();
         } else {
           alert("AI must be turned on before passing commands.");
           closeHandler();
+          SetProjectWindow(false);
         }
       };
       return (

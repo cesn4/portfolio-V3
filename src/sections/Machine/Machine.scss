@@ -1,7 +1,15 @@
 .machine {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+  align-items: center;
+  justify-content: center;
+  transition: cta-transition([transform visibility opacity]);
+  width: 100vw;
+  height: 100vh;
+  &.-active {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    width: 100vw;
+    visibility: visible;
+    opacity: 1;
+  }
 }
