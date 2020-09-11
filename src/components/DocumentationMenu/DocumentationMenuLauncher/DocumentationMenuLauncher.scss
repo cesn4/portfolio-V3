@@ -6,7 +6,7 @@
   align-items: center;
   top: 0;
   right: 0;
-  z-index: 600;
+  z-index: $z-index-upper;
   padding: 10px;
 
   &.-active {

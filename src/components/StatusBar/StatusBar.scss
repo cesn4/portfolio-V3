@@ -1,4 +1,7 @@
 .status-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
     color: theme-color(active);
     display: flex;
     flex-direction: column;

@@ -1,56 +1,50 @@
 import React, { FunctionComponent, Fragment } from "react";
 import classNames from "classnames";
 
-import { documentation } from "~/mocks/documentation";
+import "./ProjectMenuInterface.scss";
 
-import "./DocumentationMenuInterface.scss";
-
-const DocumentationMenuInterface: FunctionComponent<DocumentationMenuInterfaceProps> = ({
+const ProjectMenuInterface: FunctionComponent<ProjectMenuInterfaceProps> = ({
   menuState,
   closeHandler,
-  projectState,
-}: DocumentationMenuInterfaceProps) => {
-  const className = "documentation-menu-interface";
+}: ProjectMenuInterfaceProps) => {
+  const className = "project-menu-interface";
 
-  const documentationContent = (
-    <Fragment>
-      <span className={`${className}__text`}>{documentation.text}</span>
-      <span className={`${className}__command`}>{documentation.command}</span>
-      <span className={`${className}__text`}>{documentation.secndaryText}</span>
-    </Fragment>
-  );
+  const clickHandler = (command?: string) => {
+    console.log('hello');
+    closeHandler();
+  }
 
   const projectContent = (
     <Fragment>
       <span className={`${className}__title`}>Code exapmles</span>
           <span
-            onClick={() => console.log('hey')}
+            onClick={() => clickHandler()}
             className={`${className}__name`}
           >
             Discovery App
           </span>
           <span
-            onClick={() => console.log('hey')}
+            onClick={() => clickHandler()}
             className={`${className}__name`}
           >
             Portfolio
           </span>
           <span className={`${className}__title`}>Projects</span>
           <span
-            onClick={() => console.log('hey')}
+            onClick={() => clickHandler()}
             className={`${className}__name`}
           >
             Hanetera Shop
           </span>
           <span
-            onClick={() => console.log('hey')}
+            onClick={() => clickHandler()}
             className={`${className}__name`}
           >
             Board score
           </span>
           <span className={`${className}__title`}>Contributions</span>
           <span
-            onClick={() => console.log('hey')}
+            onClick={() => clickHandler()}
             className={`${className}__name`}
           >
             Gray Boundaries
@@ -63,20 +57,19 @@ const DocumentationMenuInterface: FunctionComponent<DocumentationMenuInterfacePr
       onMouseLeave={closeHandler}
       className={classNames(`${className}`, {
         "-active": menuState,
-        "-project": projectState,
+        "-project": true,
       })}
     >
       <div className={`${className}__content`}>
-        {projectState? projectContent : documentationContent}
+        {projectContent}
       </div>
     </div>
   );
 };
 
-interface DocumentationMenuInterfaceProps {
+interface ProjectMenuInterfaceProps {
   menuState: boolean;
   closeHandler: VoidFunction;
-  projectState: boolean;
 }
 
-export default DocumentationMenuInterface;
+export default ProjectMenuInterface;

@@ -1,23 +1,18 @@
-.documentation-menu-interface {
+.project-menu-interface {
   position: fixed;
   display: flex;
   align-items: center;
   height: fit-content;
-  top: 50%;
-  right: -100%;
-  width: 20vw;
+  bottom: -100%;
+  right: 0;
+  width: fit-content;
   background-color: $color-black;
   padding: 2%;
   z-index: $z-index-sky;
-  transition: cta-transition([right], 0.5s);
-  transform: translateY(-50%);
+  transition: cta-transition([bottom], 0.5s);
 
   &.-active {
-    right: 0;
-  }
-
-  &.-project {
-    width: fit-content;
+    bottom: 0;
   }
 
   &__content {
