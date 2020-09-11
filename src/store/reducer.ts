@@ -5,7 +5,7 @@ const initialState: ApplicationState = {
     aiCommand: "Good morning",
     aiState: true,
     projectWindowState: false,
-    activeProject: '',
+    activeProject: 0,
 };
 const reducer = (state = initialState, action: Actions): ApplicationState => {
     switch (action.type) {

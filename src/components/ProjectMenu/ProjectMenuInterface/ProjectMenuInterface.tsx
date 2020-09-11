@@ -2,6 +2,7 @@ import React, { FunctionComponent, Fragment } from "react";
 import classNames from "classnames";
 
 import "./ProjectMenuInterface.scss";
+import { SetActiveProject, SetProjectWindow } from "~/store/actions";
 
 const ProjectMenuInterface: FunctionComponent<ProjectMenuInterfaceProps> = ({
   menuState,
@@ -9,8 +10,9 @@ const ProjectMenuInterface: FunctionComponent<ProjectMenuInterfaceProps> = ({
 }: ProjectMenuInterfaceProps) => {
   const className = "project-menu-interface";
 
-  const clickHandler = (command?: string) => {
-    console.log('hello');
+  const clickHandler = (index: number) => {
+    SetProjectWindow(true);
+    SetActiveProject(index);
     closeHandler();
   }
 
@@ -18,33 +20,33 @@ const ProjectMenuInterface: FunctionComponent<ProjectMenuInterfaceProps> = ({
     <Fragment>
       <span className={`${className}__title`}>Code exapmles</span>
           <span
-            onClick={() => clickHandler()}
+            onClick={() => clickHandler(0)}
             className={`${className}__name`}
           >
             Discovery App
           </span>
           <span
-            onClick={() => clickHandler()}
+            onClick={() => clickHandler(1)}
             className={`${className}__name`}
           >
             Portfolio
           </span>
           <span className={`${className}__title`}>Projects</span>
           <span
-            onClick={() => clickHandler()}
+            onClick={() => clickHandler(2)}
             className={`${className}__name`}
           >
             Hanetera Shop
           </span>
           <span
-            onClick={() => clickHandler()}
+            onClick={() => clickHandler(3)}
             className={`${className}__name`}
           >
             Board score
           </span>
           <span className={`${className}__title`}>Contributions</span>
           <span
-            onClick={() => clickHandler()}
+            onClick={() => clickHandler(4)}
             className={`${className}__name`}
           >
             Gray Boundaries
