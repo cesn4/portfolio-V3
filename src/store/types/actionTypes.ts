@@ -13,5 +13,9 @@ export interface SetProjectWindow {
     type: 'SetProjectWindow';
     payload: boolean;
 }
+export interface SetActiveProject {
+    type: 'SetActiveProject';
+    payload: string;
+}
 
-export type Actions = SetAiCommand | SetAiType | SetProjectWindow;
+export type Actions = SetAiCommand | SetAiType | SetProjectWindow | SetActiveProject;
