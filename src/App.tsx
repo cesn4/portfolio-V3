@@ -1,14 +1,27 @@
-import React, { FunctionComponent, Fragment } from 'react';
+import React, { FunctionComponent } from "react";
+import {
+  BrowserRouter,
+  HashRouter,
+  Switch,
+  Route,
+} from "react-router-dom";
 
-import Main from './views/Main';
-import '~/config/layout';
+import Main from "./views/Main";
+import Projects from "./views/Projects";
+
+import "~/config/layout";
 
 const App: FunctionComponent = () => {
-    return (
-        <Fragment>
-            <Main />
-        </Fragment>
-    );
+  return (
+    <BrowserRouter>
+      <Switch>
+        <HashRouter>
+          <Route exact path="/" component={Main} />
+          <Route path="/project/:slug" component={Projects}/>
+        </HashRouter>
+      </Switch>
+    </BrowserRouter>
+  );
 };
 
 export default App;

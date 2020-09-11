@@ -35,6 +35,7 @@
     margin-bottom: 10px;
     text-align: start;
     transition: cta-transition(background-color, 0.1s);
+    text-decoration: none;
 
     &:hover {
       background-color: $color-dark-gray;

@@ -8,15 +8,10 @@ import "./ProjectInfo.scss";
 
 const ProjectInfo: FunctionComponent<ProjectInfoProps> = ({
   project,
-  isActive
 }: ProjectInfoProps) => {
   const className = "project-info";
   return (
-    <div
-      className={classNames(`${className}`, {
-        "-active": isActive,
-      })}
-    >
+    <div className={classNames(`${className}`, {})}>
       <Container>
         <Row>
           <Col lg={12} xl={12} md={12}>
@@ -71,7 +66,6 @@ const ProjectInfo: FunctionComponent<ProjectInfoProps> = ({
 
 interface ProjectInfoProps {
   project: ProjectInfoObject;
-  isActive: boolean;
 }
 
 export default ProjectInfo;

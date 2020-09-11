@@ -8,12 +8,10 @@ import { ApplicationState } from "~/store/types/applicationState";
 
 import "./Machine.scss";
 
-const Machine: FunctionComponent<AIProps & MachineProps> = ({ command, isActive }: AIProps & MachineProps) => {
+const Machine: FunctionComponent<AIProps> = ({ command }: AIProps) => {
   const className = "machine";
   return (
-    <div className={classNames(`${className}`, {
-      "-active": isActive,
-    })}>
+    <div className={classNames(`${className}`)}>
       <Container>
         <Row>
           <Col>
@@ -30,9 +28,5 @@ const mapStateToProps = (state: ApplicationState): AIProps => {
     command: state.aiCommand,
   };
 };
-
-interface MachineProps {
-  isActive: boolean;
-}
 
 export default connect(mapStateToProps)(Machine);
