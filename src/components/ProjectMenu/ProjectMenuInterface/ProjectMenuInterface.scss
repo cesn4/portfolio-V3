@@ -7,9 +7,9 @@
   right: 0;
   width: fit-content;
   background-color: $color-black;
-  padding: 2%;
   z-index: $z-index-sky;
   transition: cta-transition([bottom], 0.5s);
+  box-shadow: $shadow-main;
 
   &.-active {
     bottom: 0;
@@ -19,6 +19,11 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    padding: 30px;
+
+    @include if-tablet {
+      padding: 50px;
+    }
   }
 
   &__text {

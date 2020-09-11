@@ -7,7 +7,7 @@ import './CommandMenu.scss';
 
 const CommandMenu: FunctionComponent = () => {
   const [menuState, setMenuState] = useState(false);
-  const className = "project-menu";
+  const className = "command-menu";
 
   const menuOpenHandler: VoidFunction = () => {
     setMenuState(true);

@@ -7,7 +7,11 @@
   top: 0;
   right: 0;
   z-index: $z-index-upper;
-  padding: 10px;
+  padding: 30px 10px 30px 30px;
+
+  @include if-desktop {
+    padding: 10px;
+  }
 
   &.-active {
     #{$_parent}__text {

@@ -2,10 +2,17 @@
     &__overlay {
         height: 100vh;
         width: 100vw;
-        background-color: transparent;
-        z-index: $z-index-upper;
+        background-color: $color-black;
+        opacity: 0.6;
+        z-index: $z-index-sky;
         position: absolute;
         bottom: 0;
         right: 0;
+
+        @include if-tablet {
+            background-color: transparent;
+            opacity: 0;
+        }
     }
+
 }

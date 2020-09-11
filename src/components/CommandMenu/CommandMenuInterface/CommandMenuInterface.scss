@@ -6,11 +6,15 @@
   height: 100%;
   top: 0;
   left: -100%;
-  width: 20vw;
+  width: 75vw;
   background-color: $color-black;
-  padding: 2%;
   z-index: $z-index-sky;
   transition: cta-transition([left], 0.5s);
+  box-shadow: $shadow-main;
+
+  @include if-desktop {
+    width: 20vw;
+  }
 
   &.-active {
     left: 0;
@@ -19,18 +23,24 @@
   &__content {
     display: flex;
     flex-direction: column;
+    font-size: font-size(small);
+    padding: 30px;
+
+    @include if-tablet {
+      padding: 50px;
+      padding: none;
+      font-size: font-size(medium);
+    }
   }
 
   &__label {
     font-family: $font-family-primary;
-    font-size: font-size(medium);
     color: $color-dark-gray;
     padding-bottom: 10px;
   }
 
   &__command {
     font-family: $font-family-primary;
-    font-size: font-size(medium);
     color: $color-white;
     margin-bottom: 10px;
     text-align: start;

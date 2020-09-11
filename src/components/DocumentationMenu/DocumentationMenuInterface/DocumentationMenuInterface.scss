@@ -5,36 +5,42 @@
   height: fit-content;
   top: 50%;
   right: -100%;
-  width: 20vw;
+  width: 80vw;
   background-color: $color-black;
-  padding: 2%;
   z-index: $z-index-sky;
   transition: cta-transition([right], 0.5s);
   transform: translateY(-50%);
+  box-shadow: $shadow-main;
+
+  @include if-desktop {
+    width: 20vw;
+  }
 
   &.-active {
     right: 0;
-  }
-
-  &.-project {
-    width: fit-content;
   }
 
   &__content {
     display: flex;
     flex-direction: column;
     width: 100%;
+    font-size: font-size(small);
+    padding: 30px;
+
+    @include if-tablet {
+      padding: 50px;
+      padding: none;
+      font-size: font-size(medium);
+    }
   }
 
   &__text {
     font-family: $font-family-primary;
-    font-size: font-size(medium);
     color: $color-white;
   }
 
   &__command {
     font-family: $font-family-primary;
-    font-size: font-size(medium);
     color: orange;
     margin: 20px 0;
     text-align: start;

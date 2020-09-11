@@ -14,6 +14,7 @@ const CommandMenuLauncher: FunctionComponent<CommandMenuLauncherProps> = ({
         "-active": menuState,
       })}
       onMouseEnter={openHandler}
+      onClick={openHandler}
     >
       <span className={`${className}__text`}>Commands</span>
     </div>

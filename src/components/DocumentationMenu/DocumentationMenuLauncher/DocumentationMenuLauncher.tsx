@@ -14,10 +14,9 @@ const DocumentationMenuLauncher: FunctionComponent<DocumentationMenuLauncherProp
         "-active": menuState,
       })}
       onMouseEnter={openHandler}
+      onClick={openHandler}
     >
-      <span className={`${className}__text`}>
-        Documentation
-      </span>
+      <span className={`${className}__text`}>Documentation</span>
     </div>
   );
 };
