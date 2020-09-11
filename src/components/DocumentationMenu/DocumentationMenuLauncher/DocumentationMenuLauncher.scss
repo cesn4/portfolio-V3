@@ -27,11 +27,11 @@
     font-size: font-size(mini);
     text-transform: uppercase;
     writing-mode: vertical-rl;
-    text-orientation: sideways-right;
+    text-orientation: sideways;
     transition: cta-transition(opacity, 0.5s);
     cursor: default;
     @include if-tablet {
-      font-size: font-size(medium);
+      font-size: font-size(small);
     }
   }
 }

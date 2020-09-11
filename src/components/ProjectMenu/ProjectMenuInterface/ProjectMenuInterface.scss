@@ -3,16 +3,21 @@
   display: flex;
   align-items: center;
   height: fit-content;
-  bottom: -100%;
-  right: 0;
   width: fit-content;
   background-color: $color-black;
   z-index: $z-index-sky;
   transition: cta-transition([bottom], 0.5s);
   box-shadow: $shadow-main;
+  transform: translateX(-50%) translateY(-50%);
+  top: 50%;
+  left: 50%;
+  visibility: hidden;
+  opacity: 0;
+  transition: cta-transition([opacity visibility]);
 
   &.-active {
-    bottom: 0;
+    opacity: 1;
+    visibility: visible;
   }
 
   &__content {

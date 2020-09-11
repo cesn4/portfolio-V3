@@ -29,7 +29,7 @@
     cursor: default;
 
     @include if-tablet {
-      font-size: font-size(medium);
+      font-size: font-size(small);
     }
   }
 }

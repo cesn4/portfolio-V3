@@ -13,4 +13,8 @@
     @include if-tablet {
         padding: 0 20%;
     }
+
+    @include if-desktop-xl {
+        font-size: font-size(large);
+    }
 }

@@ -56,7 +56,6 @@ const ProjectMenuInterface: FunctionComponent<ProjectMenuInterfaceProps> = ({
 
   return (
     <div
-      onMouseLeave={closeHandler}
       className={classNames(`${className}`, {
         "-active": menuState,
         "-project": true,
