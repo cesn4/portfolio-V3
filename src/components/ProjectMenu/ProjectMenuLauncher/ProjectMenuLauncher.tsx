@@ -14,6 +14,7 @@ const ProjectMenuLauncher: FunctionComponent<ProjectMenuLauncherProps> = ({
         "-active": menuState,
       })}
       onMouseEnter={openHandler}
+      onClick={openHandler}
     >
       <span className={`${className}__text`}>
         Projects

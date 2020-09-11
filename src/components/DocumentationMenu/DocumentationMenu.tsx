@@ -3,11 +3,11 @@ import React, { FunctionComponent, Fragment, useState } from "react";
 import DocumentationMenuLauncher from "./DocumentationMenuLauncher";
 import DocumentationMenuInterface from "./DocumentationMenuInterface";
 
-const DocumentationMenu: FunctionComponent<DocumentationMenuProps> = ({
-  isProjects = false,
-}: DocumentationMenuProps) => {
-  const [menuState, setMenuState] = useState(false);
+import './DocumentationMenu.scss';
 
+const DocumentationMenu: FunctionComponent= () => {
+  const [menuState, setMenuState] = useState(false);
+  const className = "documentation-menu";
 
   const menuOpenHandler: VoidFunction = () => {
     setMenuState(true);
@@ -19,22 +19,22 @@ const DocumentationMenu: FunctionComponent<DocumentationMenuProps> = ({
 
   return (
     <Fragment>
+       {menuState && (
+        <div
+          onClick={menuCloseHandler}
+          className={`${className}__overlay`}
+        ></div>
+      )}
       <DocumentationMenuLauncher
-        projectState={isProjects}
         openHandler={menuOpenHandler}
         menuState={menuState}
       />
       <DocumentationMenuInterface
-        projectState={isProjects}
         menuState={menuState}
         closeHandler={menuCloseHandler}
       />
     </Fragment>
   );
 };
-
-interface DocumentationMenuProps {
-  isProjects?: boolean | undefined;
-}
 
 export default DocumentationMenu;

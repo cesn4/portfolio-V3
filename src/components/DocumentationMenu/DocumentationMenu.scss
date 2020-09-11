@@ -1,0 +1,11 @@
+.documentation-menu {
+    &__overlay {
+        height: 100vh;
+        width: 100vw;
+        background-color: transparent;
+        z-index: $z-index-upper;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+}

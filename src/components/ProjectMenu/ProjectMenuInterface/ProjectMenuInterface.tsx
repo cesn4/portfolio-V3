@@ -62,7 +62,10 @@ const ProjectMenuInterface: FunctionComponent<ProjectMenuInterfaceProps> = ({
         "-project": true,
       })}
     >
-      <div className={`${className}__content`}>{projectContent}</div>
+      <div className={`${className}__overlay`}></div>
+      <div className={`${className}__box`}>
+        <div className={`${className}__content`}>{projectContent}</div>
+      </div>
     </div>
   );
 };
