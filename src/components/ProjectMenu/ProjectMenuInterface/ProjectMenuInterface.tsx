@@ -1,6 +1,8 @@
 import React, { FunctionComponent, Fragment } from "react";
 import classNames from "classnames";
 
+import { Link } from "react-router-dom";
+
 import "./ProjectMenuInterface.scss";
 
 const ProjectMenuInterface: FunctionComponent<ProjectMenuInterfaceProps> = ({
@@ -9,48 +11,48 @@ const ProjectMenuInterface: FunctionComponent<ProjectMenuInterfaceProps> = ({
 }: ProjectMenuInterfaceProps) => {
   const className = "project-menu-interface";
 
-  const clickHandler = (command?: string) => {
-    console.log('hello');
-    closeHandler();
-  }
-
   const projectContent = (
     <Fragment>
       <span className={`${className}__title`}>Code exapmles</span>
-          <span
-            onClick={() => clickHandler()}
-            className={`${className}__name`}
-          >
-            Discovery App
-          </span>
-          <span
-            onClick={() => clickHandler()}
-            className={`${className}__name`}
-          >
-            Portfolio
-          </span>
-          <span className={`${className}__title`}>Projects</span>
-          <span
-            onClick={() => clickHandler()}
-            className={`${className}__name`}
-          >
-            Hanetera Shop
-          </span>
-          <span
-            onClick={() => clickHandler()}
-            className={`${className}__name`}
-          >
-            Board score
-          </span>
-          <span className={`${className}__title`}>Contributions</span>
-          <span
-            onClick={() => clickHandler()}
-            className={`${className}__name`}
-          >
-            Gray Boundaries
-          </span>
+      <Link
+        to="/project/0"
+        onClick={() => closeHandler()}
+        className={`${className}__name`}
+      >
+        Discovery App
+      </Link>
+      <Link
+        to="/project/1"
+        onClick={() => closeHandler()}
+        className={`${className}__name`}
+      >
+        Portfolio
+      </Link>
+      <span className={`${className}__title`}>Projects</span>
+      <Link
+        to="/project/2"
+        onClick={() => closeHandler()}
+        className={`${className}__name`}
+      >
+        Hantera Shop
+      </Link>
+      <Link
+        to="/project/3"
+        onClick={() => closeHandler()}
+        className={`${className}__name`}
+      >
+        Board Score
+      </Link>
+      <span className={`${className}__title`}>Contributions</span>
+      <Link
+        to="/project/4"
+        onClick={() => closeHandler()}
+        className={`${className}__name`}
+      >
+        Gray Boundaries
+      </Link>
     </Fragment>
-  )
+  );
 
   return (
     <div
@@ -60,9 +62,7 @@ const ProjectMenuInterface: FunctionComponent<ProjectMenuInterfaceProps> = ({
         "-project": true,
       })}
     >
-      <div className={`${className}__content`}>
-        {projectContent}
-      </div>
+      <div className={`${className}__content`}>{projectContent}</div>
     </div>
   );
 };

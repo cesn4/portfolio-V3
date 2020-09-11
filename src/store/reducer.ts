@@ -5,6 +5,7 @@ const initialState: ApplicationState = {
     aiCommand: "Good morning",
     aiState: true,
     projectWindowState: false,
+    activeProject: 0,
 };
 const reducer = (state = initialState, action: Actions): ApplicationState => {
     switch (action.type) {
@@ -24,6 +25,12 @@ const reducer = (state = initialState, action: Actions): ApplicationState => {
             return {
                 ...state,
                 projectWindowState: action.payload,
+            };
+        }
+        case 'SetActiveProject': {
+            return {
+                ...state,
+                activeProject: action.payload,
             };
         }
         default: {

@@ -1,12 +1,14 @@
 import React, { FunctionComponent, Fragment, ReactChild } from "react";
 import classNames from "classnames";
 
-import "./CommandMenuInterface.scss";
-import { SetAiCommand } from "~/store/actions";
+import { SetAiCommand, SetProjectWindow } from "~/store/actions";
 import { AiCommandTypes } from "~/store/types/commandTypes";
 import { useSelector } from "react-redux";
 import { ApplicationState } from "~/store/types/applicationState";
 import { CommandListContent, commandList } from "~/mocks/commands";
+
+import "./CommandMenuInterface.scss";
+import { Link } from "react-router-dom";
 
 const CommandMenuInterface: FunctionComponent<CommandMenuInterfaceProps> = ({
   menuState,
@@ -20,42 +22,47 @@ const CommandMenuInterface: FunctionComponent<CommandMenuInterfaceProps> = ({
       const clickHandler: void | Function = (arg: AiCommandTypes) => {
         if (aiState) {
           SetAiCommand(arg);
+          SetProjectWindow(false);
           closeHandler();
         } else {
           alert("AI must be turned on before passing commands.");
           closeHandler();
+          SetProjectWindow(false);
         }
       };
       return (
         <Fragment key={index.toString()}>
           <span className={`${className}__label`}>{title}</span>
-          <button
+          <Link
+            to="/"
             className={`${className}__command`}
             onClick={(): void => {
               clickHandler(command);
             }}
           >
             {command}
-          </button>
+          </Link>
           {!!command2 && (
-            <button
+            <Link
+              to="/"
               className={`${className}__command`}
               onClick={(): void => {
                 clickHandler(command2);
               }}
             >
               {command2}
-            </button>
+            </Link>
           )}
           {!!command3 && (
-            <button
+            <Link
+              to="/"
               className={`${className}__command`}
               onClick={(): void => {
                 clickHandler(command3);
               }}
             >
               {command3}
-            </button>
+            </Link>
           )}
         </Fragment>
       );
