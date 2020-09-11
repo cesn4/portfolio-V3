@@ -13,6 +13,10 @@
   box-shadow: $shadow-main;
 
   @include if-desktop {
+    width: 25vw;
+  }
+
+  @include if-desktop-xl {
     width: 20vw;
   }
 
@@ -26,9 +30,8 @@
     font-size: font-size(small);
     padding: 30px;
 
-    @include if-tablet {
-      padding: 50px;
-      padding: none;
+    @include if-desktop-xl {
+      padding: 40px;
       font-size: font-size(medium);
     }
   }

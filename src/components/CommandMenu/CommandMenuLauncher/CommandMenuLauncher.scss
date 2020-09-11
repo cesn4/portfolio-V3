@@ -1,13 +1,13 @@
 .command-menu-launcher {
   $_parent: &;
-  position: fixed;
+  position: absolute;
   display: flex;
   height: 100%;
   align-items: center;
   top: 0;
   left: 0;
   z-index: $z-index-upper;
-  padding: 30px 30px 30px 10px;
+  padding: 50px 50px 50px 10px;
 
   @include if-desktop {
     padding: 10px;
@@ -32,8 +32,11 @@
     transition: cta-transition(opacity, 0.5s);
     cursor: default;
 
-    @include if-tablet {
-      font-size: font-size(small);
+    @include if-desktop {
+      font-size: x-large;
+    }
+    @include if-desktop-xl {
+      font-size: font-size(medium);
     }
   }
 

@@ -1,5 +1,5 @@
 .status-bar {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     color: theme-color(active);
@@ -10,6 +10,7 @@
     background-color: $color-black-shade;
     width: 100%;
     z-index: $z-index-upper;
+    padding: 10px;
 
     @include if-tablet {
         font-size: font-size(medium);

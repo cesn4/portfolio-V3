@@ -5,7 +5,7 @@
   height: fit-content;
   top: 50%;
   right: -100%;
-  width: 80vw;
+  width: 75vw;
   background-color: $color-black;
   z-index: $z-index-sky;
   transition: cta-transition([right], 0.5s);
@@ -13,7 +13,11 @@
   box-shadow: $shadow-main;
 
   @include if-desktop {
-    width: 20vw;
+    width: 300px;
+  }
+
+  @include if-desktop-xl {
+    width: 350px;
   }
 
   &.-active {
@@ -25,11 +29,10 @@
     flex-direction: column;
     width: 100%;
     font-size: font-size(small);
-    padding: 30px;
+    padding: 20px 30px;
 
-    @include if-tablet {
-      padding: 50px;
-      padding: none;
+    @include if-desktop-xl {
+      padding: 30px 40px;
       font-size: font-size(medium);
     }
   }

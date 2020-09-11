@@ -9,13 +9,14 @@
   transition: cta-transition([bottom], 0.5s);
   box-shadow: $shadow-main;
   transform: translateX(-50%) translateY(-50%);
-  top: 50%;
+  top: 55%;
   left: 50%;
   visibility: hidden;
   opacity: 0;
-  transition: cta-transition([opacity visibility]);
+  transition: cta-transition([opacity top visibility]);
 
   &.-active {
+    top: 50%;
     opacity: 1;
     visibility: visible;
   }
@@ -24,10 +25,10 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 30px;
+    padding: 20px 30px;
 
-    @include if-tablet {
-      padding: 50px;
+    @include if-desktop-xl {
+      padding: 30px 40px;
     }
   }
 
