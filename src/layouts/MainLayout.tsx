@@ -9,13 +9,14 @@ import "./MainLayout.scss";
 
 const MainLayout: FunctionComponent<MainLayoutProps> = ({
   children,
+  main = false,
 }: MainLayoutProps) => {
   const className = "main-layout";
   return (
     <div className={className}>
       <StatusBar />
-      <CommandMenu />
-      <DocumentationMenu />
+      <CommandMenu main={main}/>
+      <DocumentationMenu main={main}/>
       <ProjectMenu />
       {children}
     </div>
@@ -24,6 +25,7 @@ const MainLayout: FunctionComponent<MainLayoutProps> = ({
 
 interface MainLayoutProps {
   children: ReactNode;
+  main?: boolean;
 }
 
 export default MainLayout;

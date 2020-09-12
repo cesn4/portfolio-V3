@@ -1,10 +1,16 @@
 import React, { FunctionComponent, Fragment, useState } from "react";
+import classNames from "classnames";
 
 import CommandMenuLauncher from "./CommandMenuLauncher";
 import CommandMenuInterface from "./CommandMenuInterface";
 
-const CommandMenu: FunctionComponent = ({ children }) => {
+import "./CommandMenu.scss";
+
+const CommandMenu: FunctionComponent<CommandMenuProps> = ({
+  main = false,
+}: CommandMenuProps) => {
   const [menuState, setMenuState] = useState(false);
+  const className = "command-menu";
 
   const menuOpenHandler: VoidFunction = () => {
     setMenuState(true);
@@ -16,10 +22,27 @@ const CommandMenu: FunctionComponent = ({ children }) => {
 
   return (
     <Fragment>
-      <CommandMenuLauncher openHandler={menuOpenHandler} menuState={menuState}/>
-      <CommandMenuInterface menuState={menuState} closeHandler={menuCloseHandler}/>
+      <div
+        onClick={menuCloseHandler}
+        className={classNames(`${className}__overlay`, {
+          "-active": menuState,
+        })}
+      ></div>
+      <CommandMenuLauncher
+        main={main}
+        openHandler={menuOpenHandler}
+        menuState={menuState}
+      />
+      <CommandMenuInterface
+        menuState={menuState}
+        closeHandler={menuCloseHandler}
+      />
     </Fragment>
   );
 };
+
+interface CommandMenuProps {
+  main?: boolean;
+}
 
 export default CommandMenu;

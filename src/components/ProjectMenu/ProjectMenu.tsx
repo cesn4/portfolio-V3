@@ -1,28 +1,34 @@
-import React, { FunctionComponent, Fragment, useState } from "react";
+import React, { FunctionComponent, Fragment } from "react";
+import { useSelector } from "react-redux";
+import classNames from "classnames";
 
-import ProjectMenuLauncher from "./ProjectMenuLauncher";
 import ProjectMenuInterface from "./ProjectMenuInterface";
+import { ApplicationState } from "~/store/types/applicationState";
+import { SetProjectWindow } from "~/store/actions";
+
+import "./ProjectMenu.scss";
 
 const ProjectMenu: FunctionComponent = () => {
-  const [menuState, setMenuState] = useState(false);
+  const windowState = useSelector(
+    (state: ApplicationState) => state.projectWindowState
+  );
 
-
-  const menuOpenHandler: VoidFunction = () => {
-    setMenuState(true);
-  };
+  const className = "project-menu";
 
   const menuCloseHandler: VoidFunction = () => {
-    setMenuState(false);
+    SetProjectWindow(false);
   };
 
   return (
     <Fragment>
-      <ProjectMenuLauncher
-        openHandler={menuOpenHandler}
-        menuState={menuState}
-      />
+      <div
+        onClick={() => SetProjectWindow(false)}
+        className={classNames(`${className}__overlay`, {
+          "-active": windowState,
+        })}
+      ></div>
       <ProjectMenuInterface
-        menuState={menuState}
+        menuState={windowState}
         closeHandler={menuCloseHandler}
       />
     </Fragment>

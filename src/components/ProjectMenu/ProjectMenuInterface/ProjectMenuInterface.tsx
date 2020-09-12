@@ -56,13 +56,15 @@ const ProjectMenuInterface: FunctionComponent<ProjectMenuInterfaceProps> = ({
 
   return (
     <div
-      onMouseLeave={closeHandler}
       className={classNames(`${className}`, {
         "-active": menuState,
         "-project": true,
       })}
     >
-      <div className={`${className}__content`}>{projectContent}</div>
+      <div className={`${className}__overlay`}></div>
+      <div className={`${className}__box`}>
+        <div className={`${className}__content`}>{projectContent}</div>
+      </div>
     </div>
   );
 };

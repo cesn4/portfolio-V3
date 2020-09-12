@@ -1,0 +1,23 @@
+.documentation-menu {
+  &__overlay {
+    height: 100vh;
+    width: 100vw;
+    background-color: $color-black;
+    opacity: 0;
+    visibility: hidden;
+    z-index: $z-index-sky;
+    position: fixed;
+    top: 0;
+    right: 0;
+    transition: cta-transition([opacity visibility]);
+
+    @include if-tablet {
+      display: none;
+    }
+
+    &.-active {
+      opacity: 0.6;
+      visibility: visible;
+    }
+  }
+}

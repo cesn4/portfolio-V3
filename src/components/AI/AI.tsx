@@ -2,7 +2,7 @@ import React, { FunctionComponent } from "react";
 import Typewriter from "typewriter-effect";
 
 import { AiCommandTypes } from "~/store/types/commandTypes";
-import { SetProjectWindow, SetAiCommand } from "~/store/actions";
+import { SetProjectWindow } from "~/store/actions";
 
 import "./AI.scss";
 
@@ -10,8 +10,7 @@ const AI: FunctionComponent<AIProps> = ({ command }: AIProps) => {
   const className = "ai";
 
   if (command === "Show me your works.") {
-    setTimeout(() => SetAiCommand('Find Projects'), 6000)
-    setTimeout(() => SetProjectWindow(true), 8500)
+    setTimeout(() => SetProjectWindow(true), 4000)
   }
 
   const aiCall: Function = (command: AiCommandTypes) => {
@@ -75,18 +74,7 @@ const AI: FunctionComponent<AIProps> = ({ command }: AIProps) => {
           <Typewriter
             options={{
               strings:
-                "Sure, just give me a second to collect them...",
-              autoStart: true,
-              delay: 50,
-            }}
-          />
-        );
-      case 'Find Projects':
-        return (
-          <Typewriter
-            options={{
-              strings:
-                "Alright, here they are.",
+                "Sure, which one you would like to see?",
               autoStart: true,
               delay: 50,
             }}

@@ -3,22 +3,33 @@
   display: flex;
   align-items: center;
   height: fit-content;
-  bottom: -100%;
-  right: 0;
   width: fit-content;
   background-color: $color-black;
-  padding: 2%;
   z-index: $z-index-sky;
   transition: cta-transition([bottom], 0.5s);
+  box-shadow: $shadow-main;
+  transform: translateX(-50%) translateY(-50%);
+  top: 52%;
+  left: 50%;
+  visibility: hidden;
+  opacity: 0;
+  transition: cta-transition([opacity top visibility]);
 
   &.-active {
-    bottom: 0;
+    top: 50%;
+    opacity: 1;
+    visibility: visible;
   }
 
   &__content {
     display: flex;
     flex-direction: column;
     width: 100%;
+    padding: 20px 30px;
+
+    @include if-desktop-xl {
+      padding: 30px 40px;
+    }
   }
 
   &__text {
