@@ -9,7 +9,6 @@ import "~/config/layout";
 
 const App: FunctionComponent = () => {
   const location = useLocation();
-  console.log(location.key)
   return (
     <AnimatePresence exitBeforeEnter>
       <Switch location={location} key={location.pathname}>
