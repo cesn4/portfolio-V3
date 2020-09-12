@@ -44,7 +44,7 @@ const CommandMenuInterface: FunctionComponent<CommandMenuInterfaceProps> = ({
           </Link>
           {!!command2 && (
             <Link
-              to="/"
+              to='/'
               className={`${className}__command`}
               onClick={(): void => {
                 clickHandler(command2);
