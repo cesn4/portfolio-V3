@@ -6,7 +6,9 @@ import CommandMenuInterface from "./CommandMenuInterface";
 
 import "./CommandMenu.scss";
 
-const CommandMenu: FunctionComponent = () => {
+const CommandMenu: FunctionComponent<CommandMenuProps> = ({
+  main = false,
+}: CommandMenuProps) => {
   const [menuState, setMenuState] = useState(false);
   const className = "command-menu";
 
@@ -27,6 +29,7 @@ const CommandMenu: FunctionComponent = () => {
         })}
       ></div>
       <CommandMenuLauncher
+        main={main}
         openHandler={menuOpenHandler}
         menuState={menuState}
       />
@@ -37,5 +40,9 @@ const CommandMenu: FunctionComponent = () => {
     </Fragment>
   );
 };
+
+interface CommandMenuProps {
+  main?: boolean;
+}
 
 export default CommandMenu;

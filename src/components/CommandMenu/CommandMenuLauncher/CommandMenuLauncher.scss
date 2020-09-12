@@ -1,13 +1,39 @@
 .command-menu-launcher {
   $_parent: &;
-  position: absolute;
+  position: fixed;
   display: flex;
   height: 100%;
   align-items: center;
-  top: 0;
+  bottom: 0;
   left: 0;
   z-index: $z-index-upper;
   padding: 50px 50px 50px 10px;
+
+  &.-main {
+    position: absolute;
+    bottom: 50px;
+    height: fit-content;
+    padding: 50px;
+    transform: translateX(-50%);
+    left: 50%;
+
+    @include if-desktop {
+      padding: 50px 50px 50px 10px;
+      transform: none;
+      height: 100%;
+      left: 0;
+      bottom: 0;
+    }
+
+    #{$_parent}__text {
+      writing-mode: horizontal-tb;
+
+      @include if-desktop {
+        writing-mode: vertical-lr;
+      }
+
+    }
+  }
 
   @include if-desktop {
     padding: 10px;

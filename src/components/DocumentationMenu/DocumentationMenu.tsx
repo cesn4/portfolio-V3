@@ -4,9 +4,11 @@ import classNames from "classnames";
 import DocumentationMenuLauncher from "./DocumentationMenuLauncher";
 import DocumentationMenuInterface from "./DocumentationMenuInterface";
 
-import './DocumentationMenu.scss';
+import "./DocumentationMenu.scss";
 
-const DocumentationMenu: FunctionComponent= () => {
+const DocumentationMenu: FunctionComponent<DocumentationMenuProps> = ({
+  main = false,
+}: DocumentationMenuProps) => {
   const [menuState, setMenuState] = useState(false);
   const className = "documentation-menu";
 
@@ -20,13 +22,14 @@ const DocumentationMenu: FunctionComponent= () => {
 
   return (
     <Fragment>
-        <div
-          onClick={menuCloseHandler}
-          className={classNames(`${className}__overlay`, {
-            "-active": menuState,
-          })}
-        ></div>
+      <div
+        onClick={menuCloseHandler}
+        className={classNames(`${className}__overlay`, {
+          "-active": menuState,
+        })}
+      ></div>
       <DocumentationMenuLauncher
+        main={main}
         openHandler={menuOpenHandler}
         menuState={menuState}
       />
@@ -37,5 +40,9 @@ const DocumentationMenu: FunctionComponent= () => {
     </Fragment>
   );
 };
+
+interface DocumentationMenuProps {
+  main?: boolean;
+}
 
 export default DocumentationMenu;

@@ -11,7 +11,7 @@ const Main: FunctionComponent = () => {
 
   return (
     <div className={`${className}`}>
-      <MainLayout>
+      <MainLayout main>
         <motion.div
           initial={{ opacity: 1}}
           animate={{ opacity: 1}}

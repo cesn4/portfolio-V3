@@ -119,14 +119,15 @@ const CommandMenuInterface: FunctionComponent<CommandMenuInterfaceProps> = ({
         >
           How about match of chess?
         </Link>
+        <span className={`${className}__label`}>Contact</span>
         <Link
           to="/"
           className={`${className}__command`}
           onClick={(): void => {
-            clickHandler("Contact");
+            clickHandler("I would like to contact your creator.");
           }}
         >
-          Contact
+          I would like to contact your creator.
         </Link>
       </div>
     </div>

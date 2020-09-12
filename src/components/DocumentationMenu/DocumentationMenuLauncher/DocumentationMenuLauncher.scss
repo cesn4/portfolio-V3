@@ -1,6 +1,6 @@
 .documentation-menu-launcher {
   $_parent: &;
-  position: absolute;
+  position: fixed;
   display: flex;
   height: 100%;
   align-items: center;
@@ -8,6 +8,32 @@
   right: 0;
   z-index: $z-index-upper;
   padding: 50px 10px 50px 50px;
+
+  &.-main {
+    position: absolute;
+    top: 50px;
+    height: fit-content;
+    padding: 50px 50px;
+    transform: translateX(50%);
+    right: 50%;
+
+    @include if-desktop {
+      padding: 50px 10px 50px 50px;
+      transform: none;
+      height: 100%;
+      right: 0;
+      top: 0;
+    }
+
+    #{$_parent}__text {
+      writing-mode: horizontal-tb;
+
+      @include if-desktop {
+        writing-mode: vertical-lr;
+      }
+
+    }
+  }
 
   @include if-desktop {
     padding: 10px;
