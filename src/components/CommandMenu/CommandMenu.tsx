@@ -1,9 +1,10 @@
 import React, { FunctionComponent, Fragment, useState } from "react";
+import classNames from "classnames";
 
 import CommandMenuLauncher from "./CommandMenuLauncher";
 import CommandMenuInterface from "./CommandMenuInterface";
 
-import './CommandMenu.scss';
+import "./CommandMenu.scss";
 
 const CommandMenu: FunctionComponent = () => {
   const [menuState, setMenuState] = useState(false);
@@ -19,14 +20,20 @@ const CommandMenu: FunctionComponent = () => {
 
   return (
     <Fragment>
-      {menuState && (
-        <div
-          onClick={menuCloseHandler}
-          className={`${className}__overlay`}
-        ></div>
-      )}
-      <CommandMenuLauncher openHandler={menuOpenHandler} menuState={menuState}/>
-      <CommandMenuInterface menuState={menuState} closeHandler={menuCloseHandler}/>
+      <div
+        onClick={menuCloseHandler}
+        className={classNames(`${className}__overlay`, {
+          "-active": menuState,
+        })}
+      ></div>
+      <CommandMenuLauncher
+        openHandler={menuOpenHandler}
+        menuState={menuState}
+      />
+      <CommandMenuInterface
+        menuState={menuState}
+        closeHandler={menuCloseHandler}
+      />
     </Fragment>
   );
 };

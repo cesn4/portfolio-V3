@@ -1,4 +1,5 @@
 import React, { FunctionComponent, Fragment, useState } from "react";
+import classNames from "classnames";
 
 import DocumentationMenuLauncher from "./DocumentationMenuLauncher";
 import DocumentationMenuInterface from "./DocumentationMenuInterface";
@@ -19,12 +20,12 @@ const DocumentationMenu: FunctionComponent= () => {
 
   return (
     <Fragment>
-       {menuState && (
         <div
           onClick={menuCloseHandler}
-          className={`${className}__overlay`}
+          className={classNames(`${className}__overlay`, {
+            "-active": menuState,
+          })}
         ></div>
-      )}
       <DocumentationMenuLauncher
         openHandler={menuOpenHandler}
         menuState={menuState}
