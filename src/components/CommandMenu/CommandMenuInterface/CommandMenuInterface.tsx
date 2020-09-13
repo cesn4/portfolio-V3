@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useEffect } from "react";
+import React, { FunctionComponent } from "react";
 import classNames from "classnames";
 import { Link, useParams } from "react-router-dom";
 
