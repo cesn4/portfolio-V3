@@ -13,9 +13,9 @@ export interface SetProjectWindow {
     type: 'SetProjectWindow';
     payload: boolean;
 }
-export interface SetActiveProject {
-    type: 'SetActiveProject';
-    payload: number;
+export interface SetAnimationState {
+    type: 'SetAnimationState';
+    payload: boolean;
 }
 
-export type Actions = SetAiCommand | SetAiType | SetProjectWindow | SetActiveProject;
+export type Actions = SetAiCommand | SetAiType | SetProjectWindow | SetAnimationState;

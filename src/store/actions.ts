@@ -13,6 +13,6 @@ export const SetAiState = (payload: boolean): void => {
 export const SetProjectWindow = (payload: boolean): void => {
     store.dispatch({ type: 'SetProjectWindow', payload: payload });
 };
-export const SetActiveProject = (payload: number): void => {
-    store.dispatch({ type: 'SetActiveProject', payload: payload });
+export const SetAnimationState = (payload: boolean): void => {
+    store.dispatch({ type: 'SetAnimationState', payload: payload });
 };

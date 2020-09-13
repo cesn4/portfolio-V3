@@ -1,11 +1,13 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, useEffect } from "react";
 import classNames from "classnames";
 import { Link, useParams } from "react-router-dom";
 
-import { SetAiCommand, SetProjectWindow } from "~/store/actions";
+import {
+  SetAiCommand,
+  SetAnimationState,
+  SetProjectWindow,
+} from "~/store/actions";
 import { AiCommandTypes } from "~/store/types/commandTypes";
-import { useSelector } from "react-redux";
-import { ApplicationState } from "~/store/types/applicationState";
 
 import "./CommandMenuInterface.scss";
 
@@ -14,19 +16,25 @@ const CommandMenuInterface: FunctionComponent<CommandMenuInterfaceProps> = ({
   closeHandler,
 }: CommandMenuInterfaceProps) => {
   const className = "command-menu-interface";
-  const aiState = useSelector((state: ApplicationState) => state.aiState);
   const { slug } = useParams();
 
   const clickHandler: void | Function = (arg: AiCommandTypes) => {
-    if (aiState) {
+    if (slug) {
+      window.innerWidth < 800 && SetAnimationState(true);
       SetAiCommand(arg);
       SetProjectWindow(false);
       closeHandler();
     } else {
-      alert("AI must be turned on before passing commands.");
-      closeHandler();
+      SetAiCommand(arg);
       SetProjectWindow(false);
+      closeHandler();
     }
+  };
+
+  const projectsClickHandler: Function = (arg: AiCommandTypes) => {
+    SetAiCommand(arg);
+    closeHandler();
+    window.innerWidth < 800 && SetAnimationState(true);
   };
 
   const secondaryClickHandler: VoidFunction = () => {
@@ -94,7 +102,7 @@ const CommandMenuInterface: FunctionComponent<CommandMenuInterfaceProps> = ({
             to="/"
             className={`${className}__command`}
             onClick={(): void => {
-              clickHandler("Show me your works.");
+              projectsClickHandler("Show me your works.");
             }}
           >
             Show me your works.

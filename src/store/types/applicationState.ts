@@ -4,5 +4,5 @@ export interface ApplicationState {
     aiCommand: AiCommandTypes;
     aiState: boolean;
     projectWindowState: boolean;
-    activeProject: number;
+    animationState: boolean;
 }
