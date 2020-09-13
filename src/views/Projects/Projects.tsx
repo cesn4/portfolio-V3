@@ -1,16 +1,21 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 
 import MainLayout from "~/layouts";
 import ProjectInfo from "~/sections/ProjectInfo";
 import { projects } from "~/mocks/projects";
+import { SetAnimationState } from "~/store/actions";
 
 import "./Projects.scss";
 
 const Projects: FunctionComponent = () => {
   const className = "projects";
   const { slug } = useParams();
+
+  useEffect(() => {
+    SetAnimationState(false);
+  }, [])
 
   return (
     <div className={className}>
