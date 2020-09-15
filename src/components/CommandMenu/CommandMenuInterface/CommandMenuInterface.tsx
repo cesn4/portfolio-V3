@@ -64,10 +64,10 @@ const CommandMenuInterface: FunctionComponent<CommandMenuInterfaceProps> = ({
           to="/"
           className={`${className}__command`}
           onClick={(): void => {
-            clickHandler("Why do you exist?");
+            clickHandler("What's your purpose?");
           }}
         >
-          Why do you exist?
+          What's your purpose?
         </Link>
         <Link
           to="/"
@@ -83,10 +83,10 @@ const CommandMenuInterface: FunctionComponent<CommandMenuInterfaceProps> = ({
           to="/"
           className={`${className}__command`}
           onClick={(): void => {
-            clickHandler("Tell me about your experiances.");
+            clickHandler("Tell me about your creators experiances.");
           }}
         >
-          Tell me about your experiances.
+          Tell me about your creators experiances.
         </Link>
         {slug ? (
           <div
@@ -95,27 +95,27 @@ const CommandMenuInterface: FunctionComponent<CommandMenuInterfaceProps> = ({
               secondaryClickHandler();
             }}
           >
-            Show me your works.
+            Show me his projects.
           </div>
         ) : (
           <Link
             to="/"
             className={`${className}__command`}
             onClick={(): void => {
-              projectsClickHandler("Show me your works.");
+              projectsClickHandler("Show me his projects.");
             }}
           >
-            Show me your works.
+            Show me his projects.
           </Link>
         )}
         <Link
           to="/"
           className={`${className}__command`}
           onClick={(): void => {
-            clickHandler("What kind of skills do you posses?");
+            clickHandler("What kind of skills does he posses?");
           }}
         >
-          What kind of skills do you posses?.
+          What kind of skills does he posses?
         </Link>
         <span className={`${className}__label`}>Games</span>
         <Link

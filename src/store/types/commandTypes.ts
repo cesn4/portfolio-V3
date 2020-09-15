@@ -1,12 +1,11 @@
 export type AiCommandTypes =
     | 'Good morning'
     | 'Who are you?'
-    | 'Why do you exist?'
+    | "What's your purpose?"
     | 'Who created you?'
-    | 'Tell me about your experiances.'
-    | 'Show me your works.'
-    | 'Find Projects'
-    | 'What kind of skills do you posses?'
+    | "Tell me about your creators experiances."
+    | "Show me his projects."
+    | "What kind of skills does he posses?"
     | 'How about match of chess?'
     | 'I would like to contact your creator.'
     | '';

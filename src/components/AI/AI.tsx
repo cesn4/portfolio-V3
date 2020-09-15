@@ -9,7 +9,7 @@ import "./AI.scss";
 const AI: FunctionComponent<AIProps> = ({ command }: AIProps) => {
   const className = "ai";
 
-  if (command === "Show me your works.") {
+  if (command === 'Show me his projects.') {
     setTimeout(() => SetProjectWindow(true), 4000)
   }
 
@@ -36,7 +36,7 @@ const AI: FunctionComponent<AIProps> = ({ command }: AIProps) => {
             }}
           />
         );
-      case "Why do you exist?":
+      case "What's your purpose?":
         return (
           <Typewriter
             options={{
@@ -58,7 +58,7 @@ const AI: FunctionComponent<AIProps> = ({ command }: AIProps) => {
             }}
           />
         );
-      case "Tell me about your experiances.":
+      case 'Tell me about your creators experiances.':
         return (
           <Typewriter
             options={{
@@ -69,7 +69,7 @@ const AI: FunctionComponent<AIProps> = ({ command }: AIProps) => {
             }}
           />
         );
-      case "Show me your works.":
+      case 'Show me his projects.':
         return (
           <Typewriter
             options={{
