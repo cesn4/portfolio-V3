@@ -9,8 +9,8 @@ import "./AI.scss";
 const AI: FunctionComponent<AIProps> = ({ command }: AIProps) => {
   const className = "ai";
 
-  if (command === 'Show me his projects.') {
-    setTimeout(() => SetProjectWindow(true), 4000)
+  if (command === "Show me his projects.") {
+    setTimeout(() => SetProjectWindow(true), 4000);
   }
 
   const aiCall: Function = (command: AiCommandTypes) => {
@@ -30,7 +30,7 @@ const AI: FunctionComponent<AIProps> = ({ command }: AIProps) => {
           <Typewriter
             options={{
               strings:
-                " I am an artificial inteligence machine mc49 created based on fron-end developer Mindaugas Cesna.",
+                "I am an artificial inteligence machine mc49 created based on fron-end developer Mindaugas Cesna.",
               autoStart: true,
               delay: 50,
             }}
@@ -41,7 +41,7 @@ const AI: FunctionComponent<AIProps> = ({ command }: AIProps) => {
           <Typewriter
             options={{
               strings:
-                "Well... my sole purpose of existence is to represent experiance, works, skills and mindset it self of my creator.",
+                "My sole purpose of existence is to represent experiances, skills and projects of my creator.",
               autoStart: true,
               delay: 50,
             }}
@@ -58,23 +58,52 @@ const AI: FunctionComponent<AIProps> = ({ command }: AIProps) => {
             }}
           />
         );
-      case 'Tell me about your creators experiances.':
+      case "Tell me about your creators experiances.":
         return (
           <Typewriter
             options={{
               strings:
-                "Currently my work experiance is as a freelance front-end developer working with various personal projects and contributing to colegues works.",
+                "Currently my creators work experiance is freelancing as front-end developer and simultaneously working with various personal and collaboration projects for nearly an year.",
               autoStart: true,
               delay: 50,
             }}
           />
         );
-      case 'Show me his projects.':
+      case "Show me his projects.":
         return (
           <Typewriter
             options={{
-              strings:
-                "Sure, which one you would like to see?",
+              strings: "Sure, which one you would like to see?",
+              autoStart: true,
+              delay: 50,
+            }}
+          />
+        );
+      case 'What kind of skills does he posses?':
+        return (
+          <Typewriter
+            options={{
+              strings: "As for now, my creator mainly uses TypeScript, React and Sass for web-development.",
+              autoStart: true,
+              delay: 50,
+            }}
+          />
+        );
+      case "How about a match of chess?":
+        return (
+          <Typewriter
+            options={{
+              strings: "I'm sorry this command is currently disabled for your own safety.",
+              autoStart: true,
+              delay: 50,
+            }}
+          />
+        );
+      case "I would like to contact your creator.":
+        return (
+          <Typewriter
+            options={{
+              strings: "You can find his social media links at the bottom-right corner.",
               autoStart: true,
               delay: 50,
             }}

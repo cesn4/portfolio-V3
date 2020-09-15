@@ -13,7 +13,7 @@ export const commandList: Array<CommandListContent> = [
       command2: "Show me his projects.",
       command3: "What kind of skills does he posses?",
     },
-    { title: "Games", command: "How about match of chess?" },
+    { title: "Games", command: "How about a match of chess?" },
     { title: "Contact", command: "I would like to contact your creator." },
   ];
 

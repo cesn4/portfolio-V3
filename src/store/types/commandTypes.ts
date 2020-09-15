@@ -6,6 +6,6 @@ export type AiCommandTypes =
     | "Tell me about your creators experiances."
     | "Show me his projects."
     | "What kind of skills does he posses?"
-    | 'How about match of chess?'
+    | "How about a match of chess?"
     | 'I would like to contact your creator.'
     | '';

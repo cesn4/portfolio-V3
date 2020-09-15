@@ -122,7 +122,7 @@ const CommandMenuInterface: FunctionComponent<CommandMenuInterfaceProps> = ({
           to="/"
           className={`${className}__command`}
           onClick={(): void => {
-            clickHandler("How about match of chess?");
+            clickHandler("How about a match of chess?");
           }}
         >
           How about match of chess?
