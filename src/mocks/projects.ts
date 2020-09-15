@@ -2,7 +2,8 @@ export interface ProjectInfoObject {
   title: string;
   summary: string;
   tools: string;
-  link: string;
+  link?: string;
+  github?: string;
   image: string;
   imageL?: string;
   imageR?: string;
@@ -15,7 +16,7 @@ export const projects: Array<ProjectInfoObject> = [
     summary:
       "It's an app built for learning purposes and introducing my self with web development. Project progress was guided by senior Front-end developer so with this project I absorbed tools and techniques like BEM, Git, Redux, Sass and etc. witch are need for modern Front-End developer.",
     tools: "TypeScript, React, Redux, Sass",
-    link: "https://github.com/cesn4/discovery-app-learning/tree/dev",
+    link: "https://github.com/cesn4/discovery-app-learning",
     image:
       "https://firebasestorage.googleapis.com/v0/b/portfolio-ai.appspot.com/o/project-images%2Fdiscovery-1-min.png?alt=media&token=e433fd13-07b3-4f90-b993-73bebac60372",
     imageL:
@@ -29,7 +30,8 @@ export const projects: Array<ProjectInfoObject> = [
     summary:
       "Another practice of creating a little bit different Arcade-AI portfolio application. Project polished knowlage from discovery-app, and increased proficiency of React Hook control and NPM packages",
     tools: "TypeScript, React, Redux, Sass",
-    link: "https://github.com/cesn4/portfolio-V2",
+    link: "https://mc49.me/",
+    github: "https://github.com/cesn4/portfolio-V3",
     image:
       "https://firebasestorage.googleapis.com/v0/b/portfolio-ai.appspot.com/o/project-images%2Fportfolio-1-min.png?alt=media&token=71d4c442-588e-40dd-8b12-0e2843e8438c",
     imageL:
@@ -67,7 +69,7 @@ export const projects: Array<ProjectInfoObject> = [
     summary:
       "An Contributaion for project author with help creating a web application for content. Project built with Gatsby framework and GrathQL query language.",
     tools: "Typescript, Gatsby, GraphQL, Redux, Sanity",
-    link: "In progress...",
+    link: "https://pilkojizona.lrt.lt/chapter/intro",
     image:
       "https://firebasestorage.googleapis.com/v0/b/portfolio-ai.appspot.com/o/project-images%2Fzone-1-min.png?alt=media&token=f8bba9fc-53ad-49f7-ab52-a70a5e7fcc12",
     imageL:
@@ -81,7 +83,6 @@ export const projects: Array<ProjectInfoObject> = [
     summary:
       "Project combined from two applications - Shop it's self and CMS. Both created from scratch with React framework and connected with Google FireBase server services.",
     tools: "TypeScript, React, Redux, FireBase, Node.js",
-    link: "In progress...",
     image:
       "https://firebasestorage.googleapis.com/v0/b/portfolio-ai.appspot.com/o/project-images%2Fhantera-back-2-min.png?alt=media&token=77e98c1e-b513-4cfa-b115-0130ad54805a",
     imageL:
