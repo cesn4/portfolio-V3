@@ -16,7 +16,7 @@ export const projects: Array<ProjectInfoObject> = [
     summary:
       "It's an app built for learning purposes and introducing my self with web development. Project progress was guided by senior Front-end developer so with this project I absorbed tools and techniques like BEM, Git, Redux, Sass and etc. witch are need for modern Front-End developer.",
     tools: "TypeScript, React, Redux, Sass",
-    link: "https://github.com/cesn4/discovery-app-learning",
+    github: "https://github.com/cesn4/discovery-app-learning",
     image:
       "https://firebasestorage.googleapis.com/v0/b/portfolio-ai.appspot.com/o/project-images%2Fdiscovery-1-min.png?alt=media&token=e433fd13-07b3-4f90-b993-73bebac60372",
     imageL:
