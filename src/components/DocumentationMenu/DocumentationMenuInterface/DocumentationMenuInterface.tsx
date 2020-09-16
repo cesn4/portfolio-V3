@@ -14,8 +14,6 @@ const DocumentationMenuInterface: FunctionComponent<DocumentationMenuInterfacePr
   const documentationContent = (
     <Fragment>
       <span className={`${className}__text`}>{documentation.text}</span>
-      <span className={`${className}__command`}>{documentation.command}</span>
-      <span className={`${className}__text`}>{documentation.secndaryText}</span>
     </Fragment>
   );
 

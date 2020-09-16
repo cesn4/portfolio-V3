@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from "react";
-import { Container, Row, Col } from "react-grid-system";
+import { Container, Row, Col, Hidden } from "react-grid-system";
 import classNames from "classnames";
 
 import { ProjectInfoObject } from "~/mocks/projects";
@@ -10,38 +10,56 @@ const ProjectInfo: FunctionComponent<ProjectInfoProps> = ({
   project,
 }: ProjectInfoProps) => {
   const className = "project-info";
+  let linkState = true;
+
+  if (!project.github && !project.link) {
+    linkState = false;
+  }
+
   return (
     <div className={classNames(`${className}`, {})}>
       <Container>
         <Row>
-          <Col lg={12} xl={12} md={12}>
-            <span className={`${className}__title`}>{project.title}</span>
-          </Col>
+          <Hidden lg xl>
+            <Col lg={12} xl={12}>
+              <span className={`${className}__title-mobile`}>
+                {project.title}
+              </span>
+            </Col>
+          </Hidden>
         </Row>
         <Row>
           <Col lg={6} xl={6} md={6}>
             <div className={`${className}__image-box`}>
               <img
+                onLoad={() => console.log('loading')}
                 src={project.image}
                 alt=""
                 className={`${className}__main-image`}
               ></img>
               <div className={`${className}__secondary-image-box`}>
-                <img
-                  className={`${className}__image`}
-                  src={project.imageL}
-                  alt=""
-                ></img>
-                <img
-                  className={`${className}__image`}
-                  src={project.imageR}
-                  alt=""
-                ></img>
+                {project.imageL && (
+                  <img
+                    className={`${className}__image`}
+                    src={project.imageL}
+                    alt=""
+                  ></img>
+                )}
+                {project.imageR && (
+                  <img
+                    className={`${className}__image`}
+                    src={project.imageR}
+                    alt=""
+                  ></img>
+                )}
               </div>
             </div>
           </Col>
           <Col lg={6} xl={6} md={6}>
             <div className={`${className}__info-box`}>
+              <span className={`${className}__title-desktop`}>
+                {project.title}
+              </span>
               <div className={`${className}__summary`}>
                 <span className={`${className}__label`}>Summary</span>
                 <span className={`${className}__text`}>{project.summary}</span>
@@ -51,10 +69,21 @@ const ProjectInfo: FunctionComponent<ProjectInfoProps> = ({
                 <span className={`${className}__text`}>{project.tools}</span>
               </div>
               <div className={`${className}__summary`}>
-                <span className={`${className}__label`}>Link</span>
-                <a className={`${className}__text`} href={project.link}>
-                  {project.link}
-                </a>
+                {linkState && (
+                  <span className={`${className}__label`}>
+                    {project.github && project.link ? "Links" : "Link"}
+                  </span>
+                )}
+                {project.link && (
+                  <a className={`${className}__text`} href={project.link}>
+                    {project.link}
+                  </a>
+                )}
+                {project.github && (
+                  <a className={`${className}__text`} href={project.github}>
+                    {project.github}
+                  </a>
+                )}
               </div>
             </div>
           </Col>

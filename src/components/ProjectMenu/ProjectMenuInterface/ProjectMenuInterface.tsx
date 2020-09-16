@@ -13,7 +13,7 @@ const ProjectMenuInterface: FunctionComponent<ProjectMenuInterfaceProps> = ({
 
   const projectContent = (
     <Fragment>
-      <span className={`${className}__title`}>Code exapmles</span>
+      <span className={`${className}__title`}>Projects</span>
       <Link
         to="/project/0"
         onClick={() => closeHandler()}
@@ -28,7 +28,6 @@ const ProjectMenuInterface: FunctionComponent<ProjectMenuInterfaceProps> = ({
       >
         Portfolio
       </Link>
-      <span className={`${className}__title`}>Projects</span>
       <Link
         to="/project/2"
         onClick={() => closeHandler()}
@@ -37,19 +36,26 @@ const ProjectMenuInterface: FunctionComponent<ProjectMenuInterfaceProps> = ({
         Hantera Shop
       </Link>
       <Link
-        to="/project/3"
+        to="/project/5"
         onClick={() => closeHandler()}
         className={`${className}__name`}
       >
-        Board Score
+        Hantera CMS
       </Link>
-      <span className={`${className}__title`}>Contributions</span>
+      <span className={`${className}__title`}>Collaborations</span>
       <Link
         to="/project/4"
         onClick={() => closeHandler()}
         className={`${className}__name`}
       >
         Gray Boundaries
+      </Link>
+      <Link
+        to="/project/3"
+        onClick={() => closeHandler()}
+        className={`${className}__name`}
+      >
+        Board Score
       </Link>
     </Fragment>
   );
