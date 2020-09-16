@@ -28,7 +28,7 @@ export const projects: Array<ProjectInfoObject> = [
   {
     title: "Portfolio",
     summary:
-      "Another practice of creating a little bit different Arcade-AI portfolio application. Project polished knowlage from discovery-app, and increased proficiency of React Hook control and NPM packages",
+      "Another practice of creating a little bit different Arcade based AI portfolio application. Project polished knowlage from discovery-app, and increased proficiency of React Hook control and NPM packages",
     tools: "TypeScript, React, Redux, Sass",
     link: "https://mc49.me/",
     github: "https://github.com/cesn4/portfolio-V3",
@@ -43,8 +43,8 @@ export const projects: Array<ProjectInfoObject> = [
   {
     title: "Hantera Shop",
     summary:
-      "Project combined from two applications - Shop it's self and CMS. Both created from scratch with React framework and connected with Google FireBase server services.",
-    tools: "TypeScript, React, Redux, FireBase, Node.js",
+      "Project combined from two applications - Shop it's self and CMS. Created with React framework and connected with Google FireBase server services.",
+    tools: "TypeScript, React, Redux, FireBase",
     link: "In progress...",
     image:
       "https://firebasestorage.googleapis.com/v0/b/portfolio-ai.appspot.com/o/project-images%2Fhantera-front-1-min.png?alt=media&token=7e6d3851-9153-4051-99da-7ff98e2c9d9b",
@@ -81,7 +81,7 @@ export const projects: Array<ProjectInfoObject> = [
   {
     title: "Hantera CMS",
     summary:
-      "Project combined from two applications - Shop it's self and CMS. Both created from scratch with React framework and connected with Google FireBase server services.",
+      "Application created to control information in e-commerce web Hantera Shop. It's also created with React framework and connected with Google FireBase server services.",
     tools: "TypeScript, React, Redux, FireBase, Node.js",
     image:
       "https://firebasestorage.googleapis.com/v0/b/portfolio-ai.appspot.com/o/project-images%2Fhantera-back-2-min.png?alt=media&token=77e98c1e-b513-4cfa-b115-0130ad54805a",

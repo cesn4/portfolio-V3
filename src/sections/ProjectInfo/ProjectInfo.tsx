@@ -10,24 +10,33 @@ const ProjectInfo: FunctionComponent<ProjectInfoProps> = ({
   project,
 }: ProjectInfoProps) => {
   const className = "project-info";
+  let linkState = true;
+
+  if (!project.github && !project.link) {
+    linkState = false;
+  }
+
   return (
     <div className={classNames(`${className}`, {})}>
       <Container>
         <Row>
           <Hidden lg xl>
-          <Col lg={12} xl={12}>
-            <span className={`${className}__title-mobile`}>{project.title}</span>
-          </Col>
+            <Col lg={12} xl={12}>
+              <span className={`${className}__title-mobile`}>
+                {project.title}
+              </span>
+            </Col>
           </Hidden>
         </Row>
         <Row>
           <Col lg={6} xl={6} md={6}>
             <div className={`${className}__image-box`}>
-                <img
-                  src={project.image}
-                  alt=""
-                  className={`${className}__main-image`}
-                ></img>
+              <img
+                onLoad={() => console.log('loading')}
+                src={project.image}
+                alt=""
+                className={`${className}__main-image`}
+              ></img>
               <div className={`${className}__secondary-image-box`}>
                 {project.imageL && (
                   <img
@@ -48,7 +57,9 @@ const ProjectInfo: FunctionComponent<ProjectInfoProps> = ({
           </Col>
           <Col lg={6} xl={6} md={6}>
             <div className={`${className}__info-box`}>
-            <span className={`${className}__title-desktop`}>{project.title}</span>
+              <span className={`${className}__title-desktop`}>
+                {project.title}
+              </span>
               <div className={`${className}__summary`}>
                 <span className={`${className}__label`}>Summary</span>
                 <span className={`${className}__text`}>{project.summary}</span>
@@ -58,10 +69,21 @@ const ProjectInfo: FunctionComponent<ProjectInfoProps> = ({
                 <span className={`${className}__text`}>{project.tools}</span>
               </div>
               <div className={`${className}__summary`}>
-                <span className={`${className}__label`}>Link</span>
-                <a className={`${className}__text`} href={project.link}>
-                  {project.link}
-                </a>
+                {linkState && (
+                  <span className={`${className}__label`}>
+                    {project.github && project.link ? "Links" : "Link"}
+                  </span>
+                )}
+                {project.link && (
+                  <a className={`${className}__text`} href={project.link}>
+                    {project.link}
+                  </a>
+                )}
+                {project.github && (
+                  <a className={`${className}__text`} href={project.github}>
+                    {project.github}
+                  </a>
+                )}
               </div>
             </div>
           </Col>
