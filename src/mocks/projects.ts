@@ -8,13 +8,14 @@ export interface ProjectInfoObject {
   imageL?: string;
   imageR?: string;
   index: number;
+  inprogress?: boolean;
 }
 
 export const projects: Array<ProjectInfoObject> = [
   {
     title: "Discovery App",
     summary:
-      "It's an app built for learning purposes and introducing my self with web development. Project progress was guided by senior Front-end developer so with this project I absorbed tools and techniques like BEM, Git, Redux, Sass and etc. witch are need for modern Front-End developer.",
+      "It's an app built for learning purposes and introducing myself with web development. Project progress was guided by senior Front-end developer so with this project I absorbed tools and techniques like BEM, Git, Redux, Sass and etc. witch are need for modern Front-End developer.",
     tools: "TypeScript, React, Redux, Sass",
     github: "https://github.com/cesn4/discovery-app-learning",
     image:
@@ -28,7 +29,7 @@ export const projects: Array<ProjectInfoObject> = [
   {
     title: "Portfolio",
     summary:
-      "Another practice of creating a little bit different Arcade based AI portfolio application. Project polished knowlage from discovery-app, and increased proficiency of React Hook control and NPM packages",
+      "Another practice of creating a little bit different Arcade based AI portfolio application. Working with this project polished knowlage from discovery-app, and increased proficiency of React Hook control and NPM packages",
     tools: "TypeScript, React, Redux, Sass",
     link: "https://mc49.me/",
     github: "https://github.com/cesn4/portfolio-V3",
@@ -45,7 +46,7 @@ export const projects: Array<ProjectInfoObject> = [
     summary:
       "Project combined from two applications - Shop it's self and CMS. Created with React framework and connected with Google FireBase server services.",
     tools: "TypeScript, React, Redux, FireBase",
-    link: "In progress...",
+    inprogress: true,
     image:
       "https://firebasestorage.googleapis.com/v0/b/portfolio-ai.appspot.com/o/project-images%2Fhantera-front-1-min.png?alt=media&token=7e6d3851-9153-4051-99da-7ff98e2c9d9b",
     imageL:
@@ -59,7 +60,7 @@ export const projects: Array<ProjectInfoObject> = [
     summary:
       "Spare time start-up activity witch is based on learning and creating an mobile application with Dart programing language, Flutter framework and Firebase servers.",
     tools: "Dart, Flutter, Firebase",
-    link: "In progress...",
+    inprogress: true,
     image:
       "https://firebasestorage.googleapis.com/v0/b/portfolio-ai.appspot.com/o/project-images%2Fscore-1-min.png?alt=media&token=1d61846b-5964-4570-8915-cf3053e0bc90",
     index: 3,

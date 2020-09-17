@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React, { Fragment, FunctionComponent } from "react";
 import { Container, Row, Col, Hidden } from "react-grid-system";
 import classNames from "classnames";
 
@@ -32,7 +32,7 @@ const ProjectInfo: FunctionComponent<ProjectInfoProps> = ({
           <Col lg={6} xl={6} md={6}>
             <div className={`${className}__image-box`}>
               <img
-                onLoad={() => console.log('loading')}
+                onLoad={() => console.log("loading")}
                 src={project.image}
                 alt=""
                 className={`${className}__main-image`}
@@ -69,6 +69,12 @@ const ProjectInfo: FunctionComponent<ProjectInfoProps> = ({
                 <span className={`${className}__text`}>{project.tools}</span>
               </div>
               <div className={`${className}__summary`}>
+                {project.inprogress && (
+                  <Fragment>
+                    <span className={`${className}__label`}>Links</span>
+                    <span className={`${className}__text`}>In Progress...</span>
+                  </Fragment>
+                )}
                 {linkState && (
                   <span className={`${className}__label`}>
                     {project.github && project.link ? "Links" : "Link"}

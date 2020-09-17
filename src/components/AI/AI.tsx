@@ -114,7 +114,7 @@ const AI: FunctionComponent<AIProps> = ({ command }: AIProps) => {
               <Typewriter
                 options={{
                   strings:
-                    "You can contact him throuth these social media pages:",
+                    "You can contact him through these social media pages:",
                   autoStart: true,
                   delay: 50,
                 }}
