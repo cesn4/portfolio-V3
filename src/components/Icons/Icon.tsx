@@ -3,6 +3,9 @@ import classNames from 'classnames';
 
 import './Icon.scss';
 import SVGClose from './assets/SVGClose';
+import SVGLinkedIn from './assets/SVGLinkedIn';
+import SVGFaceBook from './assets/SVGFaceBook';
+import SVGGitHub from './assets/SVGGitHub';
 
 const Icon: FunctionComponent<IconProps> = ({
     className,
@@ -15,6 +18,12 @@ const Icon: FunctionComponent<IconProps> = ({
         switch (name) {
             case 'close':
                 return <SVGClose {...iconProps} />;
+            case 'linked-in':
+                return <SVGLinkedIn {...iconProps} />;
+            case 'facebook':
+                return <SVGFaceBook {...iconProps} />;
+            case 'github':
+                return <SVGGitHub {...iconProps} />;
             default:
                 return null;
         }
@@ -31,6 +40,6 @@ interface IconProps {
     name: IconType;
 }
 
-export type IconType = 'close';
+export type IconType = 'close' | 'linked-in' | 'facebook' | 'github';
 
 export default Icon;

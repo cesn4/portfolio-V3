@@ -1,8 +1,10 @@
 import React, { FunctionComponent } from "react";
 import Typewriter from "typewriter-effect";
+import { motion } from "framer-motion";
 
 import { AiCommandTypes } from "~/store/types/commandTypes";
 import { SetProjectWindow } from "~/store/actions";
+import Icon from "../Icons";
 
 import "./AI.scss";
 
@@ -79,11 +81,12 @@ const AI: FunctionComponent<AIProps> = ({ command }: AIProps) => {
             }}
           />
         );
-      case 'What kind of skills does he posses?':
+      case "What kind of skills does he posses?":
         return (
           <Typewriter
             options={{
-              strings: "As for now, my creator mainly uses TypeScript, React and Sass for web-development.",
+              strings:
+                "As for now, my creator mainly uses TypeScript, React and Sass for web-development.",
               autoStart: true,
               delay: 50,
             }}
@@ -93,7 +96,8 @@ const AI: FunctionComponent<AIProps> = ({ command }: AIProps) => {
         return (
           <Typewriter
             options={{
-              strings: "I'm sorry this command is currently disabled for your own safety.",
+              strings:
+                "I'm sorry this command is currently disabled for your own safety.",
               autoStart: true,
               delay: 50,
             }}
@@ -101,13 +105,51 @@ const AI: FunctionComponent<AIProps> = ({ command }: AIProps) => {
         );
       case "I would like to contact your creator.":
         return (
-          <Typewriter
-            options={{
-              strings: "You can find his social media links at the bottom-right corner.",
-              autoStart: true,
-              delay: 50,
-            }}
-          />
+          <div className={`${className}__contacts`}>
+            <motion.div
+              initial={{ y: 50 }}
+              animate={{ y: -50, scale: 0.9 }}
+              transition={{ delay: 3.6, duration: 1.4 }}
+            >
+              <Typewriter
+                options={{
+                  strings:
+                    "You can contact him throuth these social media pages:",
+                  autoStart: true,
+                  delay: 50,
+                }}
+              />
+            </motion.div>
+            <div className={`${className}__icon-box`}>
+              <motion.a
+                initial={{ opacity: 0, y: 20, }}
+                animate={{ opacity: 1, y: 0, }}
+                transition={{ delay: 4.2, duration: 0.4, ease: 'easeInOut'  }}
+                className={`${className}__icon`}
+                href="https://www.linkedin.com/in/mindaugas-%C4%8D%C4%97sna-612a1ab3/"
+              >
+                <Icon name="linked-in" color="#FBFBFB" size={80} />
+              </motion.a>
+              <motion.a
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 4.6, duration: 0.4, ease: 'easeInOut'  }}
+                className={`${className}__icon`}
+                href="https://www.facebook.com/mcesna"
+              >
+                <Icon name="facebook" color="#FBFBFB" size={80} />
+              </motion.a>
+              <motion.a
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 5.0, duration: 0.4, ease: 'easeInOut'  }}
+                className={`${className}__icon`}
+                href="https://github.com/cesn4"
+              >
+                <Icon name="github" color="#FBFBFB" size={80} />
+              </motion.a>
+            </div>
+          </div>
         );
       default:
         return "";
