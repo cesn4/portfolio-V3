@@ -36,7 +36,7 @@ const ProjectMenuInterface: FunctionComponent<ProjectMenuInterfaceProps> = ({
         Hantera Shop
       </Link>
       <Link
-        to="/project/5"
+        to="/project/4"
         onClick={() => closeHandler()}
         className={`${className}__name`}
       >
@@ -44,18 +44,11 @@ const ProjectMenuInterface: FunctionComponent<ProjectMenuInterfaceProps> = ({
       </Link>
       <span className={`${className}__title`}>Collaborations</span>
       <Link
-        to="/project/4"
-        onClick={() => closeHandler()}
-        className={`${className}__name`}
-      >
-        Gray Boundaries
-      </Link>
-      <Link
         to="/project/3"
         onClick={() => closeHandler()}
         className={`${className}__name`}
       >
-        Board Score
+        Gray Boundaries
       </Link>
     </Fragment>
   );

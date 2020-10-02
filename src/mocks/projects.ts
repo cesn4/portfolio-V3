@@ -56,16 +56,6 @@ export const projects: Array<ProjectInfoObject> = [
     index: 2,
   },
   {
-    title: "Board Score",
-    summary:
-      "Spare time start-up activity witch is based on learning and creating an mobile application with Dart programing language, Flutter framework and Firebase servers.",
-    tools: "Dart, Flutter, Firebase",
-    inprogress: true,
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/portfolio-ai.appspot.com/o/project-images%2Fscore-1-min.png?alt=media&token=1d61846b-5964-4570-8915-cf3053e0bc90",
-    index: 3,
-  },
-  {
     title: "Gary Boundaries",
     summary:
       "An Contributaion for project author with help creating a web application for content. Project built with Gatsby framework and GrathQL query language.",
@@ -77,20 +67,21 @@ export const projects: Array<ProjectInfoObject> = [
       "https://firebasestorage.googleapis.com/v0/b/portfolio-ai.appspot.com/o/project-images%2Fzone-2-min.png?alt=media&token=56e8c5f9-ffdb-4955-b88c-27eb36a5fdc1",
     imageR:
       "https://firebasestorage.googleapis.com/v0/b/portfolio-ai.appspot.com/o/project-images%2Fzone-3-min.png?alt=media&token=4a9390c5-501f-4204-a9dc-6874fcbfadf0",
-    index: 4,
+    index: 3,
   },
   {
     title: "Hantera CMS",
     summary:
       "Application created to control information in e-commerce web Hantera Shop. It's also created with React framework and connected with Google FireBase server services.",
     tools: "TypeScript, React, Redux, FireBase, Node.js",
+    inprogress: true,
     image:
       "https://firebasestorage.googleapis.com/v0/b/portfolio-ai.appspot.com/o/project-images%2Fhantera-back-2-min.png?alt=media&token=77e98c1e-b513-4cfa-b115-0130ad54805a",
     imageL:
       "https://firebasestorage.googleapis.com/v0/b/portfolio-ai.appspot.com/o/project-images%2Fhantera-back-1-min.png?alt=media&token=1b02fbde-4da6-4d74-bc38-8af685db5965",
     imageR:
       "https://firebasestorage.googleapis.com/v0/b/portfolio-ai.appspot.com/o/project-images%2Fhantera-back-3-min.png?alt=media&token=f08a1c42-8a76-4ec4-9e7c-56dac259d28c",
-    index: 5,
+    index: 4,
   },
 ];
 

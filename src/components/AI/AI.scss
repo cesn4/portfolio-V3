@@ -6,8 +6,7 @@
     font-family: $font-family-primary;
     font-size: font-size(medium);
     height: fit-content;
-    width: 99vw;
-    padding: 0 30px;
+    width: 80vw;
 
     @include if-tablet {
         padding: 0 20%;
